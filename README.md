@@ -12,3 +12,7 @@ Here are some of the things writertoys will help with:
 * create a log line
 * create a synopsis
 * create backstory
+
+I'm creating this with python2.7 and Flask. I use virtualenv with this, but I don't plan to
+check in the venv directory with the installed libraries (Flask and it's dependencies).
+

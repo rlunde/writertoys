@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="wt">
+
+<head>
+
+<title>Writer Toys</title>
+<!-- load bootstrap and friends -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+<!-- load angularjs and the seperate route module -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+<!-- load our app -->
+<script src="/js/app.js"></script>
+</head>
+
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="#">Writer Toys</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="#">Home</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="http://writertoys.com/toys">Toys</a></li>
+<li><a href="http://writertoys.com/blog">Blog</a></li>
+<li><a href="http://writertoys.com/about">About</a></li>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+
+
+<div class="container">
+
+<!-- content is injected here -->
+<div ng-view></div>
+
+</div> <!-- /container -->
+
+</body>
+</html>

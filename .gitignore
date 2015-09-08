@@ -9,4 +9,10 @@ dist
 *.egg-info
 _mailinglist
 .tox
-
+.git
+env
+node_modules/
+npm-debug.log
+bower_components/
+.module-cache
+flask/

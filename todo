@@ -1,3 +1,17 @@
+I'm trying this in Flask, starting with the tutorial here:
+http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+and using the tutorial here for inspiration on the client side:
+https://realpython.com/blog/python/the-ultimate-flask-front-end/
+
+Also, I'm a believer in doing client-type things with client-type code, and server-type things
+with server-type code, so I don't like the idea of writing single-threaded server code in
+Javascript or cross-compiled server code that runs in the browser.
+
+Since I'm trying to improve my skills at bootstrap, backbone, and other javascript frameworks
+now, the client pages will be in that while the server side will be all APIs (aside from serving
+up static resources used by the client).
+
+
 [ ] start with a character idea generator, just to get going
   [ ] character name generator -- generate a few at a time, and let user retry or choose one
   [ ] character background generator

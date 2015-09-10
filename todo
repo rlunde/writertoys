@@ -18,3 +18,24 @@ up static resources used by the client).
   [ ] character background generator
   [ ] character quirks generator
   [ ] character flaws generator
+
+Character:
+  Name:
+  Age:
+  Sex:
+  Cultural Background:
+    Nationality:
+    Ethnicity:
+    Religion/Beliefs:
+  Appearance:
+    Hair:
+    Skin:
+    Height:
+    Weight:
+    Unusual characteristics:
+  Personality:
+  Quirks:
+    Emotional:
+    Fears:
+    Likes/Dislikes:
+    

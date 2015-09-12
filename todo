@@ -39,3 +39,5 @@ Character:
     Fears:
     Likes/Dislikes:
     
+Misc:
+[ ] convert from auth using OpenID to another auth (e.g. Oath)

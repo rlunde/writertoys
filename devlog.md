@@ -12,4 +12,10 @@ virtualenv flask
 I followed the first two sections in [Miquel Grinberg's tutorial on Flask](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
 (except I didn't use his microblog structure). 
 
+### Saturday, September 12, 2015
+
+I followed the next part of Miquel Grinberg's tutorial.
+
+
+
 

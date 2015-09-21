@@ -38,6 +38,9 @@ Character:
     Emotional:
     Fears:
     Likes/Dislikes:
+
+[ ] each attribute should let user "pin it" so that they can regenerate everything else
+[ ] user should be able to regenerate a single attribute at any level of heirarchy
     
 Misc:
 [ ] convert from auth using OpenID to another auth (e.g. Oath)

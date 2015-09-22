@@ -44,3 +44,10 @@ Character:
     
 Misc:
 [ ] convert from auth using OpenID to another auth (e.g. Oath)
+
+[ ] make a plot outline editor / generator
+  [ ] select a kind of outline (e.g. how many major milestone points)
+  [ ] random suggestions for kinds of conflict
+  [ ] random suggestions for character development
+  [ ] random suggestions for types of suspense
+  [ ] random suggestions for sources of humor

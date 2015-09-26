@@ -40,6 +40,7 @@ Character:
     Likes/Dislikes:
 
 [ ] each attribute should let user "pin it" so that they can regenerate everything else
+  [ ] hierarchical or composite things should let you "pin" part of it -- e.g. pin setting location but not weather
 [ ] user should be able to regenerate a single attribute at any level of heirarchy
     
 Misc:
@@ -60,4 +61,12 @@ Misc:
     [ ] mysteries
     [ ] thrillers
     [ ] flash fiction
+
+[ ] make a setting generator / editor
+  [ ] past / present / future
+  [ ] land / sea / space
+  [ ] temperature / weather
+  [ ] indoors / outdoors
+  [ ] time of day
+  [ ] season / time of year
 

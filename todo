@@ -70,3 +70,8 @@ Misc:
   [ ] time of day
   [ ] season / time of year
 
+[ ] try to reduce the number of things people *have* to do
+  [ ] generate groups of things and let user choose which one(s) they like
+  [ ] reduce set of possibilities (e.g. first choose whether name is "conventional" or "unique")
+  [ ] generate a complete set of things and let user trim, if that's simpler than adding
+  [ ] don't insist on any level of "completeness" -- let user decide

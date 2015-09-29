@@ -75,3 +75,9 @@ Misc:
   [ ] reduce set of possibilities (e.g. first choose whether name is "conventional" or "unique")
   [ ] generate a complete set of things and let user trim, if that's simpler than adding
   [ ] don't insist on any level of "completeness" -- let user decide
+
+[ ] guide people through developing their own ideas
+  [ ] start with a "what if" (e.g. "what if genetic engineers made elephants the size of dogs")
+  [ ] continue to develop an idea with follow-up questions (e.g. "and what if they could talk?")
+  [ ] help people find sources of conflict (beliefs, preferences, personality types...)
+

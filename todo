@@ -81,3 +81,9 @@ Misc:
   [ ] continue to develop an idea with follow-up questions (e.g. "and what if they could talk?")
   [ ] help people find sources of conflict (beliefs, preferences, personality types...)
 
+[ ] decide on first steps, and make a first vertical "Spike"
+  [ ]  do basic layout showing placeholders for features
+  [ ] start character name generator
+    [ ] design schema for names
+    [ ] write code to generate names
+    [ ] generate names with a single type (e.g. female,  contemporary, american)

@@ -87,3 +87,9 @@ Misc:
     [ ] design schema for names
     [ ] write code to generate names
     [ ] generate names with a single type (e.g. female,  contemporary, american)
+
+[ ] overall strategy
+  [ ] make it as data driven as possible
+  [ ] try to get something minimally useful released as quickly as possible, to start getting feedback
+  [ ] focus on features that make it fun and useful, rather than complete
+

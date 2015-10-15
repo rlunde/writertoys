@@ -16,6 +16,9 @@ I followed the first two sections in [Miquel Grinberg's tutorial on Flask](http:
 
 I followed the next part of Miquel Grinberg's tutorial.
 
+### Wednesday, October 14, 2014
 
+Finally starting to get back to the code. Test it so far by executing "run.py" and
+then going to http://localhost:5000/login
 
 

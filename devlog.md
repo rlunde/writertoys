@@ -24,5 +24,58 @@ I'm up to the Database section of the tutorial: http://blog.miguelgrinberg.com/p
 One problem is that while I want to provide logins to users, I don't want to use OpenID (as in the example),
 since that seems to be going away. I'd rather find a simple implementation of Oauth2.
 
+I think I'll try to deploy this on heroku, so I'm also following the instructions on making a default python app on heroku:
 
+https://devcenter.heroku.com/articles/getting-started-with-python
+https://devcenter.heroku.com/articles/heroku-postgresql#local-setup
+
+Following the heroku instructions, I got this:
+$ heroku create
+Creating tranquil-brook-1024... done, stack is cedar-14
+https://tranquil-brook-1024.herokuapp.com/ | https://git.heroku.com/tranquil-brook-1024.git
+Git remote heroku added
+
+It looks like if I want to replace gunicorn with flask, I'll need to update the procfile:
+https://devcenter.heroku.com/articles/getting-started-with-python#define-a-procfile
+
+Also, to get all the dependencies loaded:
+"Heroku recognizes an app as a Python app by the existence of a requirements.txt file in the root directory. 
+For your own apps, you can create one by running pip freeze."
+
+Note: I forgot I'd already done: virtualenv flask
+
+I did:
+
+$ pip freeze
+$ source flask/bin/activate
+$ pip install -r requirements.txt --allow-all-external
+
+Now I can run ./run.py (after the source flask/bin/activate) and it runs from the local python virtual environment.
+
+Cool! Now I can start it locally with "heroku local web"
+
+I want to use Postgres rather than sqlite for this (since that's what heroku needs), so I follow instructions here:
+http://killtheyak.com/use-postgresql-with-django-flask/
+
+I did:
+$ createuser -s writertoys
+$ createdb -U writertoys --locale=en_US.utf-8 -E utf-8 -O writertoys writertoysdb -T template0
+
+I downloaded postico from https://eggerapps.at/postico/ to use to create the tables.
+
+I used psql command "\password writertoys" to change the password to "happy2"
+
+Trying db_create.py as in the tutorial I get:
+ImportError: No module named psycopg2
+
+I added this to requirements.txt:
+psycopg2==2.6.1
+
+Then I had to modify the PATH to include the bin directory included postgres stuff:
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+pip install -r requirements.txt --allow-all-external
+
+That finally installed psycopg2, so I could retry db_create.py, which succeeded (apparently).
+
+Finally, I was able to run ./db_migrate.py and it created the users table!
 

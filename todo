@@ -98,3 +98,8 @@ Misc:
   [ ] try to make it easy to suggest additional content and features
   [ ] see if there's a way to make a game out of it (contest for flash fiction?)
 
+[ ] schema thoughts
+  [ ] top level should be users (with login/authentication) and stories
+  [ ] stories should be just a JSON bag to hold 0 or more of each kind of thing (characters, titles, settings)
+  [ ] should be able to mark one thing as the current selection (e.g. the title) without losing other possibilities
+  [ ] metadata should control what goes in stories (should be able to add a kind of story element without modifying schema)

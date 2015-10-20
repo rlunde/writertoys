@@ -82,3 +82,4 @@ Finally, I was able to run ./db_migrate.py and it created the users table!
 Added another table, Story, which I expect will hold a JSON blob (hence the text data type)
 of things (characters, plots, names, ...) that are "accepted" using the tool.
 
+Added some thoughts about schema to the todo list.

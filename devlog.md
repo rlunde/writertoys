@@ -83,3 +83,12 @@ Added another table, Story, which I expect will hold a JSON blob (hence the text
 of things (characters, plots, names, ...) that are "accepted" using the tool.
 
 Added some thoughts about schema to the todo list.
+
+Now I'm up to part 5 of Miquel Grinberg's tutorial, and (as I'd hoped) he's suggesting that
+OpenID is not a good way to go, and refers to an OAuth tutorial he wrote. Despite misgivings
+based on prior encounters with OAuth, I guess I'll try to tackle that now.
+
+Here's what I'm starting with for that:
+http://blog.miguelgrinberg.com/post/oauth-authentication-with-flask
+
+

@@ -86,9 +86,16 @@ Added some thoughts about schema to the todo list.
 
 Now I'm up to part 5 of Miquel Grinberg's tutorial, and (as I'd hoped) he's suggesting that
 OpenID is not a good way to go, and refers to an OAuth tutorial he wrote. Despite misgivings
-based on prior encounters with OAuth, I guess I'll try to tackle that now.
+based on prior encounters with OAuth, I guess I'll try to tackle that.
 
 Here's what I'm starting with for that:
 http://blog.miguelgrinberg.com/post/oauth-authentication-with-flask
 
+I think I'll ignore authorization for right now, and see if I can get some basic layout
+working.
+
+I tried adding in some of the later stuff from the tutorial, and got errors I can't yet
+understand. I commented out the "@login_required" over index in the views.py file, and
+commented out the database calls in the before_request, since it's somehow calling those
+even when is_authenticated is False
 

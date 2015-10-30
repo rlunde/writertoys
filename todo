@@ -103,3 +103,8 @@ Misc:
   [ ] stories should be just a JSON bag to hold 0 or more of each kind of thing (characters, titles, settings)
   [ ] should be able to mark one thing as the current selection (e.g. the title) without losing other possibilities
   [ ] metadata should control what goes in stories (should be able to add a kind of story element without modifying schema)
+
+[ ] overall theme
+  [ ] start with something like a good bootstrap template, and modify it
+  [ ] need to decide what people can do without creating an account, or creating a "story" to save things in?
+

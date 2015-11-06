@@ -109,5 +109,8 @@ Misc:
   [ ] need to decide what people can do without creating an account, or creating a "story" to save things in?
 
 [ ] ok, let's start from the top
-  [ ] what can I do that makes a difference?
+  [ ] I'm getting hung up on authorization / authentication -- let's get through it
+    [ ] basic login -- create a login, login, logout
+    [ ] oath2 login -- facebook, twitter, google
+  [ ] page flow / page layout
 

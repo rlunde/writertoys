@@ -99,3 +99,10 @@ understand. I commented out the "@login_required" over index in the views.py fil
 commented out the database calls in the before_request, since it's somehow calling those
 even when is_authenticated is False
 
+Ah ha! is_authenticated doesn't mean what it looks like. It means "should this user be
+*allowed* to authenticate. So usually you'd return true, no matter what.
+
+I added a little more oauth stuff from Grinberg's tutorial on that, but it is still asking
+for the OpenID stuff. Next step is to rip out the remaining OpenID stuff and see if I can
+figure out how to mix oauth with regular logins with passwords.
+

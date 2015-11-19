@@ -106,3 +106,7 @@ I added a little more oauth stuff from Grinberg's tutorial on that, but it is st
 for the OpenID stuff. Next step is to rip out the remaining OpenID stuff and see if I can
 figure out how to mix oauth with regular logins with passwords.
 
+OK, there's probably an example of someone using Flask that has a combination of Oath2 and
+regular managed logins, which is what anybody these days wants. I'm going to spend the
+rest of my time today looking for that.
+

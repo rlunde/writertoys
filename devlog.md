@@ -110,3 +110,10 @@ OK, there's probably an example of someone using Flask that has a combination of
 regular managed logins, which is what anybody these days wants. I'm going to spend the
 rest of my time today looking for that.
 
+Weird. I can't find anything that combines regular login/password management and Oauth, so
+I get to have fun combining them myself. This looks like a good starting point for regular
+login/password management:
+
+https://github.com/lingthio/Flask-User-starter-app
+I'll try combining that with the Oauth stuff from Miquel Grinberg
+

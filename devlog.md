@@ -117,3 +117,9 @@ login/password management:
 https://github.com/lingthio/Flask-User-starter-app
 I'll try combining that with the Oauth stuff from Miquel Grinberg
 
+There are two more things that look like what I might actually want to use:
+https://pythonhosted.org/Flask-Security/ -- for normal logins and passwords
+https://pypi.python.org/pypi/Flask-Security
+https://github.com/mattupstate/flask-security
+https://pypi.python.org/pypi/Flask-Social -- for oauth plugged in to flask-security
+

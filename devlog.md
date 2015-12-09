@@ -123,3 +123,6 @@ https://pypi.python.org/pypi/Flask-Security
 https://github.com/mattupstate/flask-security
 https://pypi.python.org/pypi/Flask-Social -- for oauth plugged in to flask-security
 
+I've been spending time looking at other examples. Amazing to me that most "real" web
+sites use a combination of Oauth and regular accounts, and none of the examples I've
+been able to find do.

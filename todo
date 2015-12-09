@@ -110,7 +110,7 @@ Misc:
 
 [ ] ok, let's start from the top
   [ ] I'm getting hung up on authorization / authentication -- let's get through it
-    [ ] basic login -- create a login, login, logout
+    [ ] basic login -- create a signup, login, logout, forgot-password
     [ ] oath2 login -- facebook, twitter, google
   [ ] page flow / page layout
 

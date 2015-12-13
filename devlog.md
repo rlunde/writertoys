@@ -126,3 +126,8 @@ https://pypi.python.org/pypi/Flask-Social -- for oauth plugged in to flask-secur
 I've been spending time looking at other examples. Amazing to me that most "real" web
 sites use a combination of Oauth and regular accounts, and none of the examples I've
 been able to find do.
+
+I think, since I'm basically trying to do the same thing in both python/flask, golang,
+and ruby/rails, that I'll see if I can make a tiny sample project in each that does
+nothing except user management with a regular login/password and Oauth2. Maybe add a
+code generator?

@@ -16,3 +16,4 @@ npm-debug.log
 bower_components/
 .module-cache
 flask/
+private-notes

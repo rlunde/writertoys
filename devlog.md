@@ -31,8 +31,7 @@ https://devcenter.heroku.com/articles/heroku-postgresql#local-setup
 
 Following the heroku instructions, I got this:
 $ heroku create
-Creating tranquil-brook-1024... done, stack is cedar-14
-https://tranquil-brook-1024.herokuapp.com/ | https://git.heroku.com/tranquil-brook-1024.git
+...
 Git remote heroku added
 
 It looks like if I want to replace gunicorn with flask, I'll need to update the procfile:
@@ -62,8 +61,6 @@ $ createuser -s writertoys
 $ createdb -U writertoys --locale=en_US.utf-8 -E utf-8 -O writertoys writertoysdb -T template0
 
 I downloaded postico from https://eggerapps.at/postico/ to use to create the tables.
-
-I used psql command "\password writertoys" to change the password to "happy2"
 
 Trying db_create.py as in the tutorial I get:
 ImportError: No module named psycopg2
@@ -131,3 +128,14 @@ I think, since I'm basically trying to do the same thing in both python/flask, g
 and ruby/rails, that I'll see if I can make a tiny sample project in each that does
 nothing except user management with a regular login/password and Oauth2. Maybe add a
 code generator?
+
+For the moment, I want to focus on actually getting something working specific to
+this project, though. I'll try to get the Oauth stuff working by itself, and then
+later come back and try to add support for normal accounts/passwords as well.
+
+First up, Facebook integration. It looks like they have a good tutorial for web
+Oauth integration here:
+https://developers.facebook.com/docs/facebook-login/web
+
+I created apps in both Facebook and Twitter, so I'm ready to try continuing in
+the Oauth tutorial from Grinberg.

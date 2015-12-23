@@ -17,3 +17,4 @@ bower_components/
 .module-cache
 flask/
 private-notes
+app/secret_config.py

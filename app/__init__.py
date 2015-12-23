@@ -7,6 +7,8 @@ from config import basedir
 
 app = Flask(__name__)
 app.config.from_object('config')
+# set an environment variable to the path to the file of "secret" environment settings (e.g. secret_config.py)
+app.config.from_envvar('WRITERTOYS_SETTINGS')
 db = SQLAlchemy(app)
 lm = LoginManager()
 lm.init_app(app)

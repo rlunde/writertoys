@@ -139,3 +139,8 @@ https://developers.facebook.com/docs/facebook-login/web
 
 I created apps in both Facebook and Twitter, so I'm ready to try continuing in
 the Oauth tutorial from Grinberg.
+
+I made a file called secret_config.py that is included from an environment variable,
+WRITERTOYS_SETTINGS that holds the path to the file. That has the API secrets
+and database password, etc. That I don't want to check in to github.
+

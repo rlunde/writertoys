@@ -144,3 +144,14 @@ I made a file called secret_config.py that is included from an environment varia
 WRITERTOYS_SETTINGS that holds the path to the file. That has the API secrets
 and database password, etc. That I don't want to check in to github.
 
+I should make a log of all the things that should just happen, but don't because
+they're all things you have to go learn in their own context.
+
+You should be able to:
+  a) select heroku from a dropdown list, then fill out credentials
+  b) select postgres from a dropdown list, then fill out credentials
+  c) select Facebook and Twitter (etc.) from a dropdown list, and be guided through getting app IDs, etc.
+  d) generate code that makes a basic app, including authentication with Oauth2, login/password
+
+I'm not going to do that now, for this, but it's obviously something that could accelerate new
+projects a great deal.

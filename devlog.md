@@ -155,3 +155,6 @@ You should be able to:
 
 I'm not going to do that now, for this, but it's obviously something that could accelerate new
 projects a great deal.
+
+I believe I have all the infrastructure in place now, so all I need to do (in theory)
+is wire everything up in the login form.

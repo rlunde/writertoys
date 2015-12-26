@@ -4,7 +4,6 @@ from flask.ext.login import LoginManager, UserMixin
 from hashlib import md5
 from app import db
 
-
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)

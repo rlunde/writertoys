@@ -6,6 +6,7 @@ from app import db
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    social_id = db.Column(db.String(64), nullable=False, unique=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     stories = db.relationship('Story', backref='author', lazy='dynamic')

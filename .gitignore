@@ -18,3 +18,4 @@ bower_components/
 flask/
 private-notes
 app/secret_config.py
+source_me.private

@@ -158,3 +158,7 @@ projects a great deal.
 
 I believe I have all the infrastructure in place now, so all I need to do (in theory)
 is wire everything up in the login form.
+
+Not quite -- I forgot I needed to add the "social_id" to the User model. I did that, but
+still need to figure out how to get the db_* scripts working with the new "secret" config
+stuff that I don't want to check in to github.

@@ -162,3 +162,8 @@ is wire everything up in the login form.
 Not quite -- I forgot I needed to add the "social_id" to the User model. I did that, but
 still need to figure out how to get the db_* scripts working with the new "secret" config
 stuff that I don't want to check in to github.
+
+For now, I just added a basedir to db_migrate like in config.py, then directly imported
+the database URI from app.secret_config. I want that to be in an environment variable,
+but I'll figure that out later.
+

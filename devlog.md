@@ -167,3 +167,6 @@ For now, I just added a basedir to db_migrate like in config.py, then directly i
 the database URI from app.secret_config. I want that to be in an environment variable,
 but I'll figure that out later.
 
+Baby steps today -- need to finish updating login html. Also, figure out where to user g.user
+and where to use current_user.
+

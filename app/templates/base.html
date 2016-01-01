@@ -1,17 +1,21 @@
 <html>
   <head>
     {% if title %}
-    <title>{{ title }} - microblog</title>
+    <title>{{ title }} - writertoys</title>
     {% else %}
-    <title>microblog</title>
+    <title>writertoys</title>
     {% endif %}
   </head>
   <body>
-    <div>Microblog:
+    <div>WriterToys:
         <a href="{{ url_for('index') }}">Home</a>
         {% if g.user.is_authenticated %}
         | <a href="{{ url_for('user', nickname=g.user.nickname) }}">Your Profile</a>
         | <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <h2>Sign In With Facebook or Twitter</h2>
+            <p><a href="{{ url_for('oauth_authorize', provider='facebook') }}">Login with Facebook</a></p>
+            <p><a href="{{ url_for('oauth_authorize', provider='twitter') }}">Login with Twitter</a></p>
         {% endif %}
     </div>
     <hr>

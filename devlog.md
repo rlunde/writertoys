@@ -170,3 +170,6 @@ but I'll figure that out later.
 Baby steps today -- need to finish updating login html. Also, figure out where to user g.user
 and where to use current_user.
 
+Another step -- now I think I actually need to be running this on my actual domain for the
+callback from OAuth to work. Progress!
+

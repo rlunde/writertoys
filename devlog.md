@@ -173,3 +173,19 @@ and where to use current_user.
 Another step -- now I think I actually need to be running this on my actual domain for the
 callback from OAuth to work. Progress!
 
+Looking on Heroku, under tranquil-brook (my app there for this), it turns out that I can
+add config values under "settings" -- I'm not sure if that is environment variables or something
+else. Also, I've already added a Postgres database, but I don't know yet how to update it
+with the latest schema.
+
+It looks like I can get a URL to the postgres database from their web page under my app, and
+the password, and then I can connect to it using the code explained here:
+
+https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-python
+
+I will need to figure out how to change all of the db_*.py scripts as well as the app
+to use that URL and password, using an environment variable for each.
+
+The configuration section on Heroku to set variables under here, and already has DATABASE_URL,
+so I think it's very likely that it's setting environment variables:
+https://dashboard.heroku.com/apps/tranquil-brook-1024/settings

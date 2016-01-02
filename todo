@@ -110,7 +110,10 @@ Misc:
 
 [ ] ok, let's start from the top
   [ ] I'm getting hung up on authorization / authentication -- let's get through it
-    [ ] oath2 login -- let's ONLY do this at first, since it's not critical facebook, twitter, google
+    [ ] oath2 login -- let's ONLY do this at first, since it's not critical: facebook, twitter
+  [ ] get deployment to Heroku figured out
+    [ ] how do I get the postgres database (complete with password that I don't want to check in) deployed?
+    [ ] how do I get the Flask project (with secret_config.py, not to be checked in) deployed?
   [ ] page flow / page layout
   [ ] finish the "typical" login process
     [ ] basic login -- create a signup, login, logout, forgot-password

@@ -1,6 +1,11 @@
 #!flask/bin/python
+import imp
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 from migrate.versioning import api
-from config import SQLALCHEMY_DATABASE_URI
+#from config import SQLALCHEMY_DATABASE_URI
+from app.secret_config import SQLALCHEMY_DATABASE_URI
 from config import SQLALCHEMY_MIGRATE_REPO
 from app import db
 import os.path

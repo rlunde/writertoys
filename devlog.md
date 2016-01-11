@@ -189,3 +189,11 @@ to use that URL and password, using an environment variable for each.
 The configuration section on Heroku to set variables under here, and already has DATABASE_URL,
 so I think it's very likely that it's setting environment variables:
 https://dashboard.heroku.com/apps/tranquil-brook-1024/settings
+
+I'm going to try using the remote (heroku) database from the db_migrate scripts. Here goes nothing!
+
+[x] modify app/secret_config.py to use DATABASE_URL as seen in the heroku project settings
+[x] modify db_create.py and db_migrate.py to use postgres database on heroku
+[x] run db_create.py and db_migrate.py
+[x] look at database on heroku using postico (wow, it somehow knew all the connection info -- must have already done something)
+

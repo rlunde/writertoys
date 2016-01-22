@@ -212,4 +212,19 @@ Unfortunately, that didn't look at all like the web page I get when I run run.py
 I hadn't added heroku as a remote git repo, so I did:
 heroku git:remote -a tranquil-brook-1024
 
+After an enormous amount of git stuff, I think I got the stuff I wanted merged into heroku's git repo,
+and now it is broken, but at least the logs show me a hint about what I need to fix:
+
+bash: run.py: command not found
+2016-01-22T03:06:25.631384+00:00 heroku[web.1]: State changed from starting to crashed
+2016-01-22T03:06:25.632568+00:00 heroku[web.1]: State changed from crashed to starting
+2016-01-22T03:06:25.622394+00:00 heroku[web.1]: Process exited with status 127
+2016-01-22T03:06:28.476806+00:00 heroku[web.1]: Starting process with command `run.py`
+2016-01-22T03:06:30.332711+00:00 app[web.1]: bash: run.py: command not found
+2016-01-22T03:06:31.045577+00:00 heroku[web.1]: State changed from starting to crashed
+2016-01-22T03:06:31.025317+00:00 heroku[web.1]: Process exited with status 127
+2016-01-22T03:06:44.847714+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=tranquil-brook-1024.herokuapp.com request_id=49854e95-5e09-4a34-836a-413b075e3d41 fwd="71.112.205.133" dyno= connect= service= status=503 bytes=
+2016-01-22T03:06:52.600477+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=tranquil-brook-1024.herokuapp.com request_id=0785e577-2222-4733-881a-10c00ecaaa72 fwd="71.112.205.133" dyno= connect= service= status=503 bytes=
+
+That's enough for tonight.
 

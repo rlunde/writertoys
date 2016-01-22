@@ -197,3 +197,19 @@ I'm going to try using the remote (heroku) database from the db_migrate scripts.
 [x] run db_create.py and db_migrate.py
 [x] look at database on heroku using postico (wow, it somehow knew all the connection info -- must have already done something)
 
+I fiddled around on the heroku web page, when I got an error the first time, and then it opened a sample page:
+
+source source_me
+source source_me.private
+heroku ps:scale web=1 --app tranquil-brook-1024
+heroku open --app tranquil-brook-1024
+heroku logs --app tranquil-brook-1024
+
+That opened the web page: https://tranquil-brook-1024.herokuapp.com/
+
+Unfortunately, that didn't look at all like the web page I get when I run run.py locally.
+
+I hadn't added heroku as a remote git repo, so I did:
+heroku git:remote -a tranquil-brook-1024
+
+

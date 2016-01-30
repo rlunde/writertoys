@@ -228,3 +228,9 @@ bash: run.py: command not found
 
 That's enough for tonight.
 
+OK, I think perhaps I've let myself get sidetracked (in several projects), by spending way too much time
+trying to figure out how to get things working on heroku, when I don't want to run it there myself in the
+longer term, anyway, and I don't want people who start with my repo to have to figure out how to move
+it elsewhere. So I'm looking at alternatives that are more just a regular VM (linode, digital ocean, aws)
+and plan to start over with that.
+

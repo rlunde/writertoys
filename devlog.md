@@ -234,3 +234,11 @@ longer term, anyway, and I don't want people who start with my repo to have to f
 it elsewhere. So I'm looking at alternatives that are more just a regular VM (linode, digital ocean, aws)
 and plan to start over with that.
 
+No matter where I deploy this, I will need some login management, so here is another alternative to look at:
+https://flask-login.readthedocs.org/en/latest/
+http://gouthamanbalaraman.com/blog/minimal-flask-login-example.html
+https://realpython.com/blog/python/using-flask-login-for-user-management-with-flask/
+
+The last link looks like it may have most of the pieces.
+
+

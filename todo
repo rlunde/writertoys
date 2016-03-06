@@ -6,8 +6,7 @@ https://realpython.com/blog/python/the-ultimate-flask-front-end/
 Also, I'm a believer in doing client-type things with client-type code, and server-type things
 with server-type code, so I don't like the idea of writing single-threaded server code in
 Javascript or transpiled server code that runs in the browser. So for this
-project, I'll stick with Python on the server side and JavaScript on the client
-side.
+project, I'll stick with Python on the server side and JavaScript on the client side.
 
 Since I'm trying to improve my skills at bootstrap, backbone, and other javascript frameworks
 now, the client pages will be in that while the server side will be all APIs (aside from serving
@@ -44,7 +43,7 @@ Character:
 [ ] user should be able to regenerate a single attribute at any level of heirarchy
     
 Misc:
-[ ] convert from auth using OpenID to another auth (e.g. Oath)
+[ ] outline steps for creating and managing accounts (just login/password, at least at first)
 
 [ ] make a plot outline editor / generator
   [ ] select a kind of outline (e.g. how many major milestone points)
@@ -109,14 +108,10 @@ Misc:
   [ ] need to decide what people can do without creating an account, or creating a "story" to save things in?
 
 [ ] ok, let's start from the top
-  [ ] I'm getting hung up on authorization / authentication -- let's get through it
-    [ ] oath2 login -- let's ONLY do this at first, since it's not critical: facebook, twitter
-  [ ] get deployment to Heroku figured out
-    [x] how do I get the postgres database (complete with password that I don't want to check in) deployed?
-    [ ] go through the python tutorial: https://devcenter.heroku.com/articles/getting-started-with-python#introduction
-    [ ] how do I get the Flask project (with secret_config.py, not to be checked in) deployed?
+  [ ] I'm getting hung up on authorization / authentication -- let's do that later, and stick to simple account/password
+    [ ] rip out auth stuff that's there so far
   [ ] page flow / page layout
+  [ ] deploy to writertoys domain hosted on digital ocean
   [ ] finish the "typical" login process
     [ ] basic login -- create a signup, login, logout, forgot-password
-
 

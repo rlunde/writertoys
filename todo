@@ -109,7 +109,9 @@ Misc:
 
 [ ] ok, let's start from the top
   [ ] I'm getting hung up on authorization / authentication -- let's do that later, and stick to simple account/password
-    [ ] rip out auth stuff that's there so far
+    [ ] nuke the whole thing except README.md and todo and devlog.md and start over
+      [ ] nuke it
+      [ ] restart based on the simplest example I can find that uses flask-login
   [ ] page flow / page layout
   [ ] deploy to writertoys domain hosted on digital ocean
   [ ] finish the "typical" login process

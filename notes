@@ -3,3 +3,5 @@ http://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-
 
 I'll be using postgres instead of mysql, but I don't think there's likely to be anything msql-specific in such a small example.
 
+Actually, Flask has a whole book, which I've started reading.
+http://flask.pocoo.org/docs/0.10/

@@ -58,3 +58,26 @@ https://realpython.com/blog/python/using-flask-login-for-user-management-with-fl
 
 The last link looks like it may have most of the pieces.
 
+I'm starting over again. This time just using the flask documentation itself, and not being
+so impatient.
+
+First: 
+$ sudo -H pip install virtualenv
+
+(But I had it already installed, from the first time.)
+
+$ pip install --upgrade virtualenv
+...took me from 13.1.2 to 15.0.1
+
+Then:
+$ virtualenv venv
+$ . venv/bin/activate
+$ pip install Flask
+
+The latter said:
+Successfully installed Flask-0.10.1 Jinja2-2.8 MarkupSafe-0.23 Werkzeug-0.11.5 itsdangerous-0.24
+
+Next I'm going to start via the quickstart section: http://flask.pocoo.org/docs/0.10/quickstart/
+
+
+

@@ -79,5 +79,6 @@ Successfully installed Flask-0.10.1 Jinja2-2.8 MarkupSafe-0.23 Werkzeug-0.11.5 i
 
 Next I'm going to start via the quickstart section: http://flask.pocoo.org/docs/0.10/quickstart/
 
+It looks like the next thing to do is just make a static layout of the index page.
 
 

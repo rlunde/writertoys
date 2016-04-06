@@ -81,4 +81,6 @@ Next I'm going to start via the quickstart section: http://flask.pocoo.org/docs/
 
 It looks like the next thing to do is just make a static layout of the index page.
 
+It looks like I just need to put all such things under a /static directory, for now.
+
 

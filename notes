@@ -5,3 +5,10 @@ I'll be using postgres instead of mysql, but I don't think there's likely to be 
 
 Actually, Flask has a whole book, which I've started reading.
 http://flask.pocoo.org/docs/0.10/
+
+The next step is to build static pages that looks like:
+
+  a) landing page with explanation of what the site is for
+  b) main page with a menu for all the fun
+
+

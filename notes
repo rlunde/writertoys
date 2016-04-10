@@ -11,4 +11,47 @@ The next step is to build static pages that looks like:
   a) landing page with explanation of what the site is for
   b) main page with a menu for all the fun
 
+The landing page should have:
+  a) some kind of logo
+  b) fun quote of the day about writing
+  c) three options
+    i) log in
+    ii) sign up
+    iii) goof around anonymously
+  d) an about link
+  e) a nice image background
+  f) animation around the three options
 
+Initially, the login and signup pages should just pop up a
+modal that says "sorry, login and signup are under construction,
+but you can still do everything else except save your results
+remotely (you can export them to a local file)." That modal
+should have a link to the main page, which is where the "goof
+around anonymously" link takes you.
+
+The main page should have a menu like:
+
+[ ] character generator
+  [ ] character name generator
+  [ ] character background generator
+  [ ] character quirks generator
+  [ ] character flaws generator
+
+[ ] plot outline generator
+  [ ] select a kind of outline
+  [ ] kinds of conflict
+  [ ] character development
+  [ ] types of suspense
+  [ ] sources of humor
+
+[ ] setting generator
+  [ ] past / present / future
+  [ ] land / sea / space
+  [ ] temperature / weather
+  [ ] indoors / outdoors
+  [ ] time of day
+  [ ] season / time of year
+
+The character name, background, etc. output should go one tab of the rest of page
+The plot outline output should go a second tab of the rest of page
+The setting output goes in a third tab of the rest of page

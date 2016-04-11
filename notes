@@ -55,3 +55,15 @@ The main page should have a menu like:
 The character name, background, etc. output should go one tab of the rest of page
 The plot outline output should go a second tab of the rest of page
 The setting output goes in a third tab of the rest of page
+
+I think characters might be best done as hierarchical lists:
+
+  1) Character: Sherlock Holmes
+    a) Background: criminology, drama, pugilism, chemistry, anatomy
+    b) Quirks: loves disguises, bees, problems to solve
+    c) Flaws: takes drugs when bored, arrogant, impatient
+  2) Character: John Watson
+    a) Background: medicine, military
+    b) Quirks: writes stories
+    c) Flaws: easily fooled
+

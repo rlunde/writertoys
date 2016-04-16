@@ -69,3 +69,8 @@ I think characters might be best done as hierarchical lists:
 
 OK, where do I start? I guess I should start with the character names. 
 
+I've seen name generators that let you choose a style of name, such as fantasy, or
+a country or region of origin. Sometimes they also generate a psychological profile
+as well, but I'd like to separate pieces out so you can (for example) pin a name, 
+but regenerate quirks, etc.
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Flask React</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <!-- (mostly) from: https://realpython.com/blog/python/the-ultimate-flask-front-end/ -->
+    <!-- (also) from: https://facebook.github.io/react/docs/tutorial.html -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Writer Toys</h1>
+      <br>
+      <div id="content"></div>
+    </div>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+ 
+    <script type="text/jsx">
+
+      /*** @jsx React.DOM */
+
+      var indexPage = React.createClass({
+        render: function() {
+          return (<h2>Greetings, from Real Python!</h2>)
+        }
+      });
+
+      React.render(
+        React.createElement(indexPage, null),
+        document.getElementById('content')
+      );
+    </script>
+  </body>
+</html>

@@ -83,4 +83,6 @@ It looks like the next thing to do is just make a static layout of the index pag
 
 It looks like I just need to put all such things under a /static directory, for now.
 
+I decided to work on the HTML a little, just to get layout going. I created a templates directory
+and made an index.html based on a Flask React tutorial and a React tutorial.
 

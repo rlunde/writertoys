@@ -86,3 +86,12 @@ It looks like I just need to put all such things under a /static directory, for 
 I decided to work on the HTML a little, just to get layout going. I created a templates directory
 and made an index.html based on a Flask React tutorial and a React tutorial.
 
+I think I should start with a standard Bootstrap layout for navbar and menus and such.
+https://getbootstrap.com/components/#navbar
+
+I added a template (with just HTML so far) with a Bootstrap menu, that I still need to
+style as well as hook anything up to.
+
+I'm not so sure this is a great time to learn React, since I'm just learning Flask, but I
+won't give up just yet.
+

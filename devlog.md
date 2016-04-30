@@ -95,3 +95,5 @@ style as well as hook anything up to.
 I'm not so sure this is a great time to learn React, since I'm just learning Flask, but I
 won't give up just yet.
 
+I'm starting from here: https://realpython.com/blog/python/the-ultimate-flask-front-end/
+

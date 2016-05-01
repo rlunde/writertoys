@@ -101,3 +101,14 @@ I copied the requirements.txt file from that project, and installed its dependen
 ./venv/bin/activate
 pip install -r requirements.txt
 
+OK, as I feared, that's taking me in a direction I don't want to go, where it seems to be
+dragging in a million dependencies again, and wants to do everything in react. One step
+forward, two steps back. I'm going to back up again, remove react for now, and just
+focus on the functionality I want. So for now, I'll stick with:
+
+1) Flask -- because I want to learn it, and it has good reviews
+2) Bootstrap -- because it does a lot of stuff without a lot of dependencies
+3) jQuery -- because most things still use it
+4) Backbone -- because I want to learn it better, and I like it a lot so far
+
+

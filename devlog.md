@@ -96,4 +96,8 @@ I'm not so sure this is a great time to learn React, since I'm just learning Fla
 won't give up just yet.
 
 I'm starting from here: https://realpython.com/blog/python/the-ultimate-flask-front-end/
+I copied the requirements.txt file from that project, and installed its dependencies:
+
+./venv/bin/activate
+pip install -r requirements.txt
 

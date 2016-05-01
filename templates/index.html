@@ -2,24 +2,17 @@
 <html>
   <head lang="en">
     <meta charset="UTF-8">
-    <title>Flask React</title>
+    <title>WriterToys</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styles -->
-    <!-- (mostly) from: https://realpython.com/blog/python/the-ultimate-flask-front-end/ -->
-    <!-- (also) from: https://facebook.github.io/react/docs/tutorial.html -->
-    <!-- Latest compiled and minified CSS -->
+    <!-- bootstrap from cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
   <body>
   <div id="main-menu" class="navbar navbar-default " role="navigation">
     <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a>
+        <div class="navbar-header"><a class="navbar-brand" href="#">WriterToys</a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-mainmenu"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
         </div>
@@ -49,26 +42,6 @@
       <div id="content"></div>
     </div>
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
- 
-    <script type="text/jsx">
-
-      /*** @jsx React.DOM */
-
-      var indexPage = React.createClass({
-        render: function() {
-          return (<h2>Greetings, from Real Python!</h2>)
-        }
-      });
-
-      React.render(
-        React.createElement(indexPage, null),
-        document.getElementById('content')
-      );
-    </script>
   </body>
 </html>

@@ -111,4 +111,13 @@ focus on the functionality I want. So for now, I'll stick with:
 3) jQuery -- because most things still use it
 4) Backbone -- because I want to learn it better, and I like it a lot so far
 
+I also decided to install things locally, but not check them into git. I used bower to
+do that, like this:
+
+  npm install -g bower
+  bower install --save backbone
+  bower install --save bootstrap
+  cd bower_components/bootstrap/
+  npm install -g grunt-cli
+  npm install
 

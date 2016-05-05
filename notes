@@ -74,3 +74,8 @@ a country or region of origin. Sometimes they also generate a psychological prof
 as well, but I'd like to separate pieces out so you can (for example) pin a name, 
 but regenerate quirks, etc.
 
+One reason to start off with Bootstrap is that I would like this to be a responsive
+app -- I think it's possible that many writers will want to use it from a phone or
+a tablet, rather than just a webpage. I'm planning to start with a paper prototype,
+so I should make several views of that based on the type of device used.
+

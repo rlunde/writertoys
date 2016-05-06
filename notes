@@ -79,3 +79,7 @@ app -- I think it's possible that many writers will want to use it from a phone 
 a tablet, rather than just a webpage. I'm planning to start with a paper prototype,
 so I should make several views of that based on the type of device used.
 
+The reason to stick with Backbone for this one is that I already know it (at least
+well enough for this) and that leaves me with just Flask to learn from scratch.
+Also, React or Angular are way overkill for something this simple.
+

@@ -119,4 +119,6 @@ Misc:
 
 [ ] let's figure out what to start with!
   [ ] start with easy and funny
-
+    [ ] character name generator
+      [ ] make a schema
+      [ ] figure out data migrations

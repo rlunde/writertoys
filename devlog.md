@@ -121,3 +121,53 @@ do that, like this:
   npm install -g grunt-cli
   npm install
 
+Backbone also requires underscore, which I installed with bower.
+
+I used dropdb to drop my old writertoysdb postgres database, since I had deleted all the
+migration stuff for it. Then I used "createdb --owner=writertoys writertoysdb" to create
+a new one. I changed the password for the postgres writertoys user to "none" for now,
+since it's only on my local machine and isn't exposed to the internet. When I create
+a database and user on digital ocean, I'll have to figure out a way to keep track of
+database credentials.
+
+Miguel Grinberg has a new Flask-Migrate tool, described here:
+http://blog.miguelgrinberg.com/post/flask-migrate-alembic-database-migration-wrapper-for-flask
+
+For an initial schema I want a USER table, and tables to support name generation.
+
+Even though I don't like integer IDs, I have to admit that it's pretty unlikely that
+I'll need to worry about scalability for any of these tables, so I'll just stick with
+defaults for now.
+
+The first version of User I had was:
+
+ class User(db.Model):
+      id = db.Column(db.Integer, primary_key=True)
+      nickname = db.Column(db.String(64), index=True, unique=True)
+      email = db.Column(db.String(120), index=True, unique=True)
+      stories = db.relationship('Story', backref='author', lazy='dynamic')
+      about_me = db.Column(db.String(140))
+      last_seen = db.Column(db.DateTime)
+
+I started off again with:
+pip install flask-migrate
+
+I'm using the configuration setup from:
+https://realpython.com/blog/python/flask-by-example-part-1-project-setup/
+https://realpython.com/blog/python/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
+
+I did:
+pip freeze > requirements.txt
+pip install autoenv==1.0.0
+touch .env
+
+I added this to .env:
+source env/bin/activate
+export APP_SETTINGS="config.DevelopmentConfig"
+
+I also added that to my "source_me":
+export DATABASE_URL="postgresql://localhost/writertoysdb"
+export APP_SETTINGS="config.DevelopmentConfig"
+source venv/bin/activate
+
+

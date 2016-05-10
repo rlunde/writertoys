@@ -170,4 +170,8 @@ export DATABASE_URL="postgresql://localhost/writertoysdb"
 export APP_SETTINGS="config.DevelopmentConfig"
 source venv/bin/activate
 
+I think to keep things simple, I'll just have a couple of fields for names, besides ID and
+the name itself, such as type (first, last), gender (male, female, either), category (european,
+asian, ..., fantasy, ...), and tags. Tags might include other things to filter by, so
+a "fantasy" name might be tagged with "elf" or "dwarf", etc.
 

@@ -83,3 +83,20 @@ The reason to stick with Backbone for this one is that I already know it (at lea
 well enough for this) and that leaves me with just Flask to learn from scratch.
 Also, React or Angular are way overkill for something this simple.
 
+I've been having a brainstorm about a new kind of UI that I'd like to try.
+
+Consider that a plot has one or many characters, but that each character can
+be in multiple stories, so can have many plots. Each character has one full name,
+but (although this is probably bad writing practice) two characters can share a
+first name or last name.
+
+So rather than try to enforce a hierarchy on data, what if I let anything link to
+anything? Links would have a type and a shortcut name, but that way if you're 
+editing a plot you could see the list of characters (or add one), or click on
+a character and edit it. 
+
+Plots could have subplots and parent plots, characters could have sub-characters
+(Dr. Jekyll, Mr. Hyde), and so on. Just click the (+->) to add a link. Or if you
+have a list of things (e.g. characters) just click the (+) to add another, or
+click a character to edit or delete it. And so on.
+

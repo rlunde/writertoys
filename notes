@@ -100,3 +100,17 @@ Plots could have subplots and parent plots, characters could have sub-characters
 have a list of things (e.g. characters) just click the (+) to add another, or
 click a character to edit or delete it. And so on.
 
+Actually, the schema could be very generic, since this isn't going to have serious
+performance issues, and be almost entirely metadata-driven.
+
+It looks more like a mind map than anything else, with nodes and edges, and where
+each node and edge has a type, and some set of attributes related to the type. So
+a character could point to a plot, but have an attribute of "first name".
+
+Then data tables (e.g. for names) would just be (id, string, type) and category
+tables would be like tags (type, tag, item_id), so for example:
+
+1,Rognvaldr,first_name
+and
+first_name,norse,1
+

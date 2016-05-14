@@ -175,3 +175,18 @@ the name itself, such as type (first, last), gender (male, female, either), cate
 asian, ..., fantasy, ...), and tags. Tags might include other things to filter by, so
 a "fantasy" name might be tagged with "elf" or "dwarf", etc.
 
+I found a recipe for serving static files and guessing their type, here:
+https://codepen.io/asommer70/post/serving-a-static-directory-with-flask
+
+It appears that you're really supposed to use nginx to serve static content, but this will
+do for now.
+
+there are a bunch of bootstrap starter templates here:
+http://www.bootstrapzero.com/templates/starter
+
+I can't remember where I found the one I started with. Hmm.
+It looks like it might be: http://www.codeply.com/view/tG55vjawYg
+Or more likely? http://www.bootply.com/0UYWpBgvbe
+
+
+

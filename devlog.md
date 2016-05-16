@@ -184,9 +184,19 @@ do for now.
 there are a bunch of bootstrap starter templates here:
 http://www.bootstrapzero.com/templates/starter
 
-I can't remember where I found the one I started with. Hmm.
-It looks like it might be: http://www.codeply.com/view/tG55vjawYg
-Or more likely? http://www.bootply.com/0UYWpBgvbe
+The one I grabbed to start with is here:
+http://www.bootstrapzero.com/bootstrap-template/capital-city
+
+I may use some icons from FreePik -- haven't decided yet. Unless I pay, they want
+attribution (which makes sense):
+
+<a href='http://www.freepik.com/free-vector/assorted-round-icons_745439.htm'>Designed by Freepik</a>
+
+I also looked at "icons8" but they annoyed me with a bait-and-switch thing, where they implied
+you could download vector icons, but when you unpack the download it's all PNG plus a link to
+buy the SVG/etc. vector icons for way more than I'd spend on icons for an open source project.
+
+I may just make my own cheesy icons, just for fun.
 
 
 

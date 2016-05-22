@@ -122,3 +122,6 @@ Misc:
     [ ] character name generator
       [ ] make a schema
       [ ] figure out data migrations
+  [ ] landing page
+    [ ] get selection of navbar items working (not weird white stuff)
+

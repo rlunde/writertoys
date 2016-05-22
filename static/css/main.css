@@ -63,3 +63,7 @@
 .alt li a:hover, .alt li.active {
   background-color:#5D17BA;
 }
+
+.glyphicon {
+    font-size: 50px;
+}

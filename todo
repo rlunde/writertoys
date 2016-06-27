@@ -81,7 +81,11 @@ Misc:
   [ ] help people find sources of conflict (beliefs, preferences, personality types...)
 
 [ ] decide on first steps, and make a first vertical "Spike"
-  [ ]  do basic layout showing placeholders for features
+  [ ] do basic layout showing placeholders for features
+    [ ] do a paper prototype
+    [x] do a landing page (with no attention to layout or style)
+  [ ] install a database migration package, starting with Flask-Migrate by Miguel Grinberg
+    [ ] read http://blog.miguelgrinberg.com/post/flask-migrate-alembic-database-migration-wrapper-for-flask
   [ ] start character name generator
     [ ] design schema for names
     [ ] write code to generate names

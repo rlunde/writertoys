@@ -110,11 +110,11 @@ a character could point to a plot, but have an attribute of "first name".
 Then data tables (e.g. for names) would just be (id, string, type) and category
 tables would be like tags (type, tag, item_id), so for example:
 
-1,Rognvaldr,first_name
+<name_id>,"Rognvaldr","first_name"
 and
-first_name,norse,1
+<category_id>,"first_name",norse,<name_id>
 
-So for each type of composite thing (character, plot, setting, ...) the page might
+For each type of composite thing (character, plot, setting, ...) the page might
 be split up into a list of current things of that type (which implies some sort
 of natural ID such as name, rather than an integer ID?) on the left, the content
 of a selected (or new) object of that type in the middle, and a list of lists of

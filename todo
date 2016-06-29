@@ -86,6 +86,10 @@ Misc:
     [x] do a landing page (with no attention to layout or style)
   [ ] install a database migration package, starting with Flask-Migrate by Miguel Grinberg
     [ ] read http://blog.miguelgrinberg.com/post/flask-migrate-alembic-database-migration-wrapper-for-flask
+  [ ] get the domain and database running on digital river
+    [ ] make sure postgres is running
+    [ ] pull from github
+    [ ] check into continuous deployment options
   [ ] start character name generator
     [ ] design schema for names
     [ ] write code to generate names

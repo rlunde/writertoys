@@ -1,0 +1,38 @@
+Requirements:
+  a) this doesn't need to be fast
+  b) most things could be in a generic schema with metadata to control it
+
+RawNames:
+  1) ID
+  2) name
+
+NameTypes:
+  1) ID
+  2) type (e.g. first, last, middle)
+
+NameOrigin:
+  1) ID
+  2) origin (e.g. asian, fantasy, greek, american)
+
+Names:
+  1) ID
+  2) RawNames id
+  3) NameTypes id
+  4) NameOrigin id
+
+This could be generalized (to what purpose?) like:
+
+Tokens:
+  1) ID
+  2) token (string)
+
+Qualifiers:
+  1) ID
+  2) type (string)
+
+Tuples:
+  1) ID
+  2) Token ID
+  3) Qualifier ID
+  4) Qualifier ID (or NULL)
+

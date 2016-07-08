@@ -1,5 +1,5 @@
 Requirements:
-  a) this doesn't need to be fast
+  a) this program doesn't need to be fast
   b) most things could be in a generic schema with metadata to control it
 
 RawNames:
@@ -20,19 +20,25 @@ Names:
   3) NameTypes id
   4) NameOrigin id
 
-This could be generalized (to what purpose?) like:
+In this structure, if you had the same name used as a first or last name, or if
+you had multiple origins with the same name, you'd have multiple Names records.
 
-Tokens:
+Everything else could probably just be metadata driven. Something like:
+
+Node:
   1) ID
-  2) token (string)
+  2) Name
+  3) NodeType
+  4) Description
+  5) Properties
 
-Qualifiers:
+Edge:
   1) ID
-  2) type (string)
+  2) EdgeType
+  3) NodeIdFrom
+  4) NodeIdTo
+  5) Properties
 
-Tuples:
-  1) ID
-  2) Token ID
-  3) Qualifier ID
-  4) Qualifier ID (or NULL)
-
+Note that this implies directionality, which you might want sometimes. Sometimes
+they're likely to be bi-directional -- for example, a story con have multiple 
+characters, and a character can be part of multiple stories.

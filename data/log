@@ -1,0 +1,45 @@
+$ psql
+psql (9.4.5)
+Type "help" for help.
+
+ron=# create database writertoys with owner writertoys;
+CREATE DATABASE
+ron=# \l
+                                       List of databases
+          Name          |   Owner    | Encoding |   Collate   |    Ctype    | Access privileges
+------------------------+------------+----------+-------------+-------------+-------------------
+ humorscope_development | humorscope | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ humorscope_production  | humorscope | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ humorscope_test        | ron        | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ nsf_awards             | nsf        | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ postgres               | ron        | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ python_getting_started | ron        | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ ron                    | ron        | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ tad                    | tad        | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =Tc/tad          +
+                        |            |          |             |             | tad=CTc/tad
+ template0              | ron        | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/ron           +
+                        |            |          |             |             | ron=CTc/ron
+ template1              | ron        | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/ron           +
+                        |            |          |             |             | ron=CTc/ron
+ writertoys             | writertoys | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ writertoysdb           | writertoys | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+(12 rows)
+
+ron=# \c writertoys writertoys
+You are now connected to database "writertoys" as user "writertoys".
+writertoys=# \i schema.ddl
+psql:schema.ddl:1: NOTICE:  table "names" does not exist, skipping
+DROP TABLE
+psql:schema.ddl:2: NOTICE:  table "rawnames" does not exist, skipping
+DROP TABLE
+psql:schema.ddl:3: NOTICE:  table "nametypes" does not exist, skipping
+DROP TABLE
+psql:schema.ddl:4: NOTICE:  table "nameorigins" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+writertoys=# \q

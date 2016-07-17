@@ -128,8 +128,10 @@ Misc:
 [ ] let's figure out what to start with!
   [ ] start with easy and funny
     [ ] character name generator
-      [ ] make a schema
+      [x] make a schema
       [ ] figure out data migrations
+        [ ] start with https://github.com/miguelgrinberg/Flask-Migrate
+        [ ] see also: https://www.youtube.com/watch?v=YJibNSI-iaE
   [ ] landing page
     [ ] get selection of navbar items working (not weird white stuff)
 

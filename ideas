@@ -147,3 +147,9 @@ I think for our purposes, we don't really need nearly that number of types. I th
 male or female, a handful of countries where it might be seen, and a link off to
 that website if people want to go nuts.
 
+Another idea is to just toss random words in the air together to see if any of them 
+or combination of them sparks an idea for the current story. On mac there is a big
+file of English words in /usr/share/dict/words (235886 words on mine, currently), so
+pulling a few out of there at random would be pretty easy. I assume there's an 
+equivalent thing for linux, assuming that that's where the web server is running.
+

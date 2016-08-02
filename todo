@@ -135,3 +135,8 @@ Misc:
   [ ] landing page
     [ ] get selection of navbar items working (not weird white stuff)
 
+[ ] even before getting the web page to work, write python code to generate names
+  [ ] command line main with options to call APIs
+  [ ] batch way to load names into database
+  [ ] APIs that read names from a database and stick them together
+

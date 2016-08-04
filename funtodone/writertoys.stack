@@ -1,0 +1,14 @@
+The "real" format will be JSON, and there will be tools (and a web site) to
+deal with it, but for now we'll just use a text outline. I like to invert things
+and put the next action on the top, rather than the bottom. The numbers reflect
+the depth -- 0 is the top, 1 is the next, etc.
+
+5: make a dummy python module that implements the API
+5: make a simple test app that calls the dummy API
+4: make a test program that calls the name generation API
+4: create and load component names into a schema
+3: make an API to generate a random name
+2: design APIs to be called by command line tools OR by the web UI (this implies a python module, I think)
+2: design and fill a schema to be used by writertoys
+1: design a modern web architecture -- let's try using Flask/Python with JS UI
+0: release a first viable product of writertoys on an unsuspecting world

@@ -3,7 +3,7 @@ deal with it, but for now we'll just use a text outline. I like to invert things
 and put the next action on the top, rather than the bottom. The numbers reflect
 the depth -- 0 is the top, 1 is the next, etc.
 
-5: make a dummy python module that implements the API
+5: make a dummy python module that implements the function
 5: make a simple test app that calls the dummy API
 4: make a test program that calls the name generation API
 4: create and load component names into a schema

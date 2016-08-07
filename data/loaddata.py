@@ -10,13 +10,27 @@ import os
 import sys
 import getopt
 from sqlalchemy import *
+import csv
+database = {}
+
+
+def loadcsv(filename, namegender, nametype):
+    conn = database['conn']
+   # todo: see if all the csv files have the same structure?
+   # todo: finish this
+    with open(filename, 'rb') as csvfile:
+        namereader = csv.reader(csvfile, delimiter=',')
+        for row in namereader:
+             print ', '.join(row)
 
 def main(argv):
    global database
    database['engine'] = engine = create_engine('postgresql://localhost/writertoys')
    database['conn'] = conn = engine.connect()
    database['metadata'] = metadata = MetaData()
-   # todo: call a function 3 times to load csv files
+   loadcsv('female_first_names.csv', 'female', 'first')
+   loadcsv('male_first_names.csv', 'male', 'first')
+   loadcsv('surnames.csv', 'either', 'last')
 
 if __name__ == "__main__":
    main(sys.argv[1:])

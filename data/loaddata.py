@@ -18,7 +18,17 @@ def getNameType(nametype):
     conn = database['conn']
     m = database['metadata']
     nameTypesTable = Table('NameTypes', metadata, autoload=True, autoload_with=engine)
-    # TODO: finish this
+    s = nameTypesTable.select(nameTypesTable.c.type == nametype)
+    rows = conn.execute(s)
+    id = None
+    if rows.rowcount == 0:
+        ins = t.insert()
+        rows = conn.execute(ins, type=nametype)
+        id = rows.inserted_primary_key[0]
+    else:
+        row = rows.fetchone()
+        id = row['id']
+    return id
 
 # create the namegender if it doesn't exist, and return the ID
 def getNameGender(namegender):

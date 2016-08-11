@@ -37,7 +37,7 @@ CREATE TABLE Names (
     id serial primary key,
     RawNames_id integer REFERENCES RawNames,
     NameTypes_id integer REFERENCES NameTypes,
-    NameGender_id integer REFERENCES NameGenders,
+    NameGenders_id integer REFERENCES NameGenders,
     NameOrigins_id integer REFERENCES NameOrigins
 );
 

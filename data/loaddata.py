@@ -20,7 +20,7 @@ def getNameType(nametype):
     m = database['metadata']
     engine = database['engine']
     nameTypesTable = Table('nametypes', m, autoload=True, autoload_with=engine)
-    s = nameTypesTable.select(nameTypesTable.c.type == nametype)
+    s = select([nameTypesTable.c.id]).where(nameTypesTable.c.type == nametype)
     rows = conn.execute(s)
     id = None
     if rows.rowcount == 0:
@@ -39,7 +39,7 @@ def getNameGender(namegender):
     m = database['metadata']
     engine = database['engine']
     nameGendersTable = Table('namegenders', m, autoload=True, autoload_with=engine)
-    s = nameGendersTable.select(nameGendersTable.c.type == namegender)
+    s = select([nameGendersTable.c.id]).where(nameGendersTable.c.type == namegender)
     rows = conn.execute(s)
     id = None
     if rows.rowcount == 0:
@@ -58,7 +58,7 @@ def getNameOrigin(nameorigin):
     m = database['metadata']
     engine = database['engine']
     nameOriginsTable = Table('nameorigins', m, autoload=True, autoload_with=engine)
-    s = nameOriginsTable.select(nameOriginsTable.c.name == nameorigin)
+    s = select([nameOriginsTable.c.id]).where(nameOriginsTable.c.name == nameorigin)
     rows = conn.execute(s)
     id = None
     if rows.rowcount == 0:
@@ -75,7 +75,7 @@ def getRawNameId(rawname):
     m = database['metadata']
     engine = database['engine']
     rawNamesTable = Table('rawnames', m, autoload=True, autoload_with=engine)
-    s = rawNamesTable.select(rawNamesTable.c.name == rawname)
+    s = select([rawNamesTable.c.id]).where(rawNamesTable.c.name == rawname)
     rows = conn.execute(s)
     id = None
     if rows.rowcount == 0:
@@ -103,11 +103,12 @@ def loadlist(filename, namegender, nametype):
     with open(filename, 'rb') as listfile:
         for rawname in listfile:
             rawNameId = getRawNameId(rawname)
-            s = namesTable.select(["namesTable.c.rawnames_id" : rawNameId, 
-                    "namesTable.c.nametypes_id" : nameTypesId,
-                    "namesTable.c.namegenders_id" : nameGendersId,
-                    "namesTable.c.nameorigins_id" : nameOriginsId
-                    ])
+            s = select(["namesTable.c.rawnames_id"]).where(and_(
+                    "namesTable.c.nametypes_id" == nameTypesId,
+                    "namesTable.c.namegenders_id" == nameGendersId,
+                    "namesTable.c.nameorigins_id" == nameOriginsId
+                    )
+                    )
             rows = conn.execute(s)
             id = None
             import pdb; pdb.set_trace()

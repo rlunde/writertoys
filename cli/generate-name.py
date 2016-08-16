@@ -1,19 +1,72 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+ 1. count the number of records in the names table
+ 2. choose N (e.g. 25) random integers between 1 and Count
+ 3. select rows that have the right gender and type that are in the list of random numbers
+ 4. if none, select all rows of the right gender and type into an array
+ 5. pick a random array element
 """
 
 import os
 import sys
 import getopt
+import random
 from sqlalchemy import *
 
 tables = {}
 database = {}
 
+# ignore collisions / duplicates
+def get_random_numbers(num, minval, maxval):
+    random.seed() # initialize with system time
+    randnums = []
+    for i in range(num):
+        randnums.append(random.randint(minval, maxval))
+    return randnums
 
-def generate_name(gender):
-    return "Bob"
+
+"""
+ 1. count the number of records in the names table
+ 2. choose N (e.g. 25) random integers between 1 and Count
+ 3. select rows that have the right gender and type that are in the list of random numbers
+"""
+def method1(gender, nametype):
+    rnametable = tables['rawnames']
+    nametable = tables['names']
+    nametypetable = tables['nametypes']
+    count_em = select([func.count()]).select_from(nametable)
+    rows = database['conn'].execute(count_em)
+    value = rows.fetchone()[0]
+    print('DEBUG: Number of rawnames is {}'.format(value))
+    randids = get_random_numbers(25, 1, value)
+    print('DEBUG: Random ID array is {}'.format(randids))
+    if gender is 'any':
+        s = select([nametable.c.id, rnametable.c.name]).where(and_(
+                    # "nametable.c.rawnames_id" == "rnametable.c.id" ,
+                    # "nametable.c.nametypes_id" == "nametypetable.c.id",
+                    # "nametypetable.c.type" == nametype,
+                     nametable.c.id.in_(randids)
+                    )
+            )
+    rows = database['conn'].execute(s)
+    id = None
+    if rows.rowcount > 0:
+        row = rows.fetchone()
+
+    return id
+"""
+ 4. select all rows of the right gender and type into an array
+ 5. pick a random array element
+"""
+def method2(gender, nametype):
+    return 'Bob'
+
+def generate_name(gender, nametype):
+    name = method1(gender, nametype)
+    if name == None:
+        name = method2(gender, nametype)
+    return name
 
 
 def main(argv):
@@ -26,11 +79,11 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hxg:d:", ["gender=", "dbname="])
     except getopt.GetoptError:
-        print 'generate-name.py [-x] -g <gender> -d <dbname>'
+        print('generate-name.py [-x] -g <gender> -d <dbname>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'generate-name.py [-x] -g <gender> -d <dbname>'
+            print('generate-name.py [-x] -g <gender> -d <dbname>')
             sys.exit()
         elif opt == '-x':
             debug = True
@@ -67,7 +120,7 @@ def main(argv):
     if debug:
         import pdb; pdb.set_trace()
 
-    name = generate_name(gender)
+    name = generate_name(gender, 'first')
     print(name)
 
 if __name__ == "__main__":

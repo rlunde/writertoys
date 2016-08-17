@@ -13,6 +13,7 @@ import sys
 import getopt
 import random
 from sqlalchemy import *
+from sqlalchemy.sql import text
 
 tables = {}
 database = {}
@@ -42,14 +43,14 @@ def method1(gender, nametype):
     randids = get_random_numbers(25, 1, value)
     print('DEBUG: Random ID array is {}'.format(randids))
     if gender is 'any':
-        s = select([nametable.c.id, rnametable.c.name]).where(and_(
-                    # "nametable.c.rawnames_id" == "rnametable.c.id" ,
-                    # "nametable.c.nametypes_id" == "nametypetable.c.id",
-                    # "nametypetable.c.type" == nametype,
-                     nametable.c.id.in_(randids)
-                    )
-            )
-    rows = database['conn'].execute(s)
+        s = text( "select rawnames.name from names, namegenders, nametypes, rawnames where "
+          "rawnames.id = names.rawnames_id "
+          "and names.nametypes_id = nametypes.id "
+          "and nametypes.type = :nt "
+          "and rawnames.id in :ids")
+        idlist = '(' + str(randids).strip('[]') + ')'
+        rows = database['conn'].execute(s, nt=nametype, ids=idlist).fetchall()
+    # todo: need an else
     id = None
     if rows.rowcount > 0:
         row = rows.fetchone()

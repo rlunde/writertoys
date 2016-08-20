@@ -31,8 +31,14 @@ def get_random_numbers(num, minval, maxval):
  1. count the number of records in the names table
  2. choose N (e.g. 25) random integers between 1 and Count
  3. select rows that have the right gender and type that are in the list of random numbers
+
+ OK, this isn't working, and it's a bad idea anyway, even when I figure out the SQL issue. The
+ results, when it returns anything, are like:
+ DEBUG: names list is [(u'Paulita',), (u'Paulita',), (u'Paulita',), (u'Romaine',), (u'Romaine',), (u'Romaine',)]
 """
 def method1(gender, nametype):
+    name = None
+    names = None
     rnametable = tables['rawnames']
     nametable = tables['names']
     nametypetable = tables['nametypes']
@@ -42,20 +48,23 @@ def method1(gender, nametype):
     print('DEBUG: Number of rawnames is {}'.format(value))
     randids = get_random_numbers(25, 1, value)
     print('DEBUG: Random ID array is {}'.format(randids))
+    idlist = str(randids).strip('[]')
     if gender is 'any':
         s = text( "select rawnames.name from names, namegenders, nametypes, rawnames where "
           "rawnames.id = names.rawnames_id "
           "and names.nametypes_id = nametypes.id "
           "and nametypes.type = :nt "
-          "and rawnames.id in :ids")
-        idlist = '(' + str(randids).strip('[]') + ')'
-        rows = database['conn'].execute(s, nt=nametype, ids=idlist).fetchall()
+          "and rawnames.id in (" + idlist + ")")
+        # I can't figure out how to use bindparams with the array of ints
+        # which is why they're embedded in the string like this. I'm going to have
+        # to redo this anyway, and rethink the schema. Databases aren't intended for
+        # random selection this way.
+        names = database['conn'].execute(s, nt=nametype).fetchall()
     # todo: need an else
-    id = None
-    if rows.rowcount > 0:
-        row = rows.fetchone()
-
-    return id
+    print('DEBUG: names list is {}'.format(names))
+    if names is not None and len(names) > 0:
+        name = names[0][0]
+    return name
 """
  4. select all rows of the right gender and type into an array
  5. pick a random array element
@@ -92,7 +101,7 @@ def main(argv):
             gender = arg
         elif opt in ("-d", "--dbname"):
             dbname = arg
-    if debug:
+    if debug is True:
         print('DEBUG: Gender is {}'.format(gender))
         print('DEBUG: Name database is {}'.format(dbname))
 

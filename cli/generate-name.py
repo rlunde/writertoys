@@ -18,66 +18,38 @@ from sqlalchemy.sql import text
 tables = {}
 database = {}
 
-# ignore collisions / duplicates
-def get_random_numbers(num, minval, maxval):
-    random.seed() # initialize with system time
-    randnums = []
-    for i in range(num):
-        randnums.append(random.randint(minval, maxval))
-    return randnums
-
-
 """
- 1. count the number of records in the names table
- 2. choose N (e.g. 25) random integers between 1 and Count
- 3. select rows that have the right gender and type that are in the list of random numbers
+ 1. select all rows of the right gender and type into an array
+ 2. pick a random array element
 
- OK, this isn't working, and it's a bad idea anyway, even when I figure out the SQL issue. The
- results, when it returns anything, are like:
- DEBUG: names list is [(u'Paulita',), (u'Paulita',), (u'Paulita',), (u'Romaine',), (u'Romaine',), (u'Romaine',)]
+ Notes:
+   a) this is SUPER expensive. For an API, we'll want to load the arrays in memory
+      by name type and gender the first time they're used, and cache them
+   b) last names don't have gender (I think?) so should refactor into get_first_name
+      and get_last_name
 """
-def method1(gender, nametype):
+def generate_name(gender, nametype):
     name = None
     names = None
-    rnametable = tables['rawnames']
-    nametable = tables['names']
-    nametypetable = tables['nametypes']
-    count_em = select([func.count()]).select_from(nametable)
-    rows = database['conn'].execute(count_em)
-    value = rows.fetchone()[0]
-    print('DEBUG: Number of rawnames is {}'.format(value))
-    randids = get_random_numbers(25, 1, value)
-    print('DEBUG: Random ID array is {}'.format(randids))
-    idlist = str(randids).strip('[]')
+    random.seed() # initialize with system time
     if gender is 'any':
-        s = text( "select rawnames.name from names, namegenders, nametypes, rawnames where "
+        s = text( "select rawnames.name from names, nametypes, rawnames where "
+          "rawnames.id = names.rawnames_id "
+          "and names.nametypes_id = nametypes.id "
+          "and nametypes.type = :nt ")
+        names = database['conn'].execute(s, nt=nametype).fetchall()
+    else:
+        s = text( "select rawnames.name from names, nametypes, namegenders, rawnames where "
           "rawnames.id = names.rawnames_id "
           "and names.nametypes_id = nametypes.id "
           "and nametypes.type = :nt "
-          "and rawnames.id in (" + idlist + ")")
-        # I can't figure out how to use bindparams with the array of ints
-        # which is why they're embedded in the string like this. I'm going to have
-        # to redo this anyway, and rethink the schema. Databases aren't intended for
-        # random selection this way.
-        names = database['conn'].execute(s, nt=nametype).fetchall()
-    # todo: need an else
-    print('DEBUG: names list is {}'.format(names))
+          "and namegenders.type = :ng ")
+        names = database['conn'].execute(s, nt=nametype, ng=gender).fetchall()
+    if debug:
+        print('DEBUG: names list is {}'.format(names))
     if names is not None and len(names) > 0:
-        name = names[0][0]
+        name = random.choice(names)[0]
     return name
-"""
- 4. select all rows of the right gender and type into an array
- 5. pick a random array element
-"""
-def method2(gender, nametype):
-    return 'Bob'
-
-def generate_name(gender, nametype):
-    name = method1(gender, nametype)
-    if name == None:
-        name = method2(gender, nametype)
-    return name
-
 
 def main(argv):
 
@@ -130,8 +102,9 @@ def main(argv):
     if debug:
         import pdb; pdb.set_trace()
 
-    name = generate_name(gender, 'first')
-    print(name)
+    first_name = generate_name(gender, 'first')
+    last_name = generate_name(gender, 'last')
+    print('{} {}'.format(first_name, last_name))
 
 if __name__ == "__main__":
     main(sys.argv[1:])

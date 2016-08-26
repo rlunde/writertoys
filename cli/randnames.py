@@ -15,17 +15,30 @@ from sqlalchemy import *
 from sqlalchemy.sql import text
 
 """
+Make sure the names have been loaded and cached, then pick
+one at random of the right gender and type.
 """
 def generate_name(gender, nametype):
     name = None
+    if not initialized is True:
+        load_names()
+    # todo: randomly pick a name
     return name
 
-def load_names(database)
+def load_names()
+    global names
+    names = None
+    global initialized
+    initialized = False
+    random.seed() # initialize random number generator (used by generate_name_) with system time
     dbname = 'writertoys'
-    gender = 'any'
     # todo: allow non-local database
     # todo: handle any database errors
-    engine = create_engine('postgresql://@localhost/' + database)
+    engine = create_engine('postgresql://@localhost/' + dbname)
     conn = engine.connect()
     metadata = MetaData()
     nametable = Table('names', metadata, autoload=True, autoload_with=engine)
+    s = select([nametable])
+    rows = conn.execute(s)
+    names = rows.fetchall()
+    initialized = True

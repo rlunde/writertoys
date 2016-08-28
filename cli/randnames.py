@@ -22,10 +22,20 @@ def generate_name(gender, nametype):
     name = None
     if not initialized is True:
         load_names()
-    # todo: randomly pick a name
-    return name
+    found = False
+    while not found:
+        name = random.choice(names)
+        (nameid, rawname, ntype, ngender, origin) = name
+        # Wow, this is *really* inefficient, since there are a LOT more last names than first names
+        # Need to change this to load first and last names into different arrays (and gendered names?)
+        if str(ntype) != nametype:
+            continue
+        if str(ngender) != 'either' and gender != 'any' and str(ngender) != gender:
+            continue
+        found = True
+    return str(rawname)
 
-def load_names()
+def load_names():
     global names
     names = None
     global initialized

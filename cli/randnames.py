@@ -23,21 +23,33 @@ def generate_name(gender, nametype):
     if not initialized is True:
         load_names()
     found = False
-    while not found:
-        name = random.choice(names)
-        (nameid, rawname, ntype, ngender, origin) = name
-        # Wow, this is *really* inefficient, since there are a LOT more last names than first names
-        # Need to change this to load first and last names into different arrays (and gendered names?)
-        if str(ntype) != nametype:
-            continue
-        if str(ngender) != 'either' and gender != 'any' and str(ngender) != gender:
-            continue
-        found = True
-    return str(rawname)
+    if nametype == 'first':
+        if gender == 'female':
+            name = random.choice(ffnames)
+        elif gender == 'male':
+            name = random.choice(mfnames)
+        else:
+            name = random.choice(fnames)
+    else:
+        name = random.choice(lnames)
+    return name
 
+'''
+We could load the names into the different lists with separate
+database queries, but I think it's faster to get them all and
+split them up here.
+'''
 def load_names():
     global names
+    global ffnames # female first names
+    global mfnames # male first names
+    global fnames # first names (either gender)
+    global lnames # last names
     names = None
+    ffnames = []
+    mfnames = []
+    fnames = []
+    lnames = []
     global initialized
     initialized = False
     random.seed() # initialize random number generator (used by generate_name_) with system time
@@ -51,4 +63,14 @@ def load_names():
     s = select([nametable])
     rows = conn.execute(s)
     names = rows.fetchall()
+    for name in names:
+        (nameid, rawname, ntype, ngender, origin) = name
+        if ntype == u'first':
+            if ngender == u'female':
+                ffnames.append(str(rawname))
+            elif ngender == u'male':
+                mfnames.append(str(rawname))
+            fnames.append(str(rawname)) # either/any
+        else:
+            lnames.append(str(rawname))
     initialized = True

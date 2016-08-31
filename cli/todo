@@ -1,4 +1,4 @@
-1) make a main script that calls randnames.py
-2) finish randnames / debug it
-3) make sure it's cached across calls
+x) make a main script that calls randnames.py
+x) finish randnames / debug it
+x) make sure it's cached across calls
 4) make some tests including timing

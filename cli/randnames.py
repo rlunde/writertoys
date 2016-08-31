@@ -11,6 +11,7 @@
 """
 
 import random
+import configparser
 from sqlalchemy import *
 from sqlalchemy.sql import text
 
@@ -53,10 +54,14 @@ def load_names():
     global initialized
     initialized = False
     random.seed() # initialize random number generator (used by generate_name_) with system time
-    dbname = 'writertoys'
-    # todo: allow non-local database
+    Config = configparser.ConfigParser()
+    Config.read("writertoys.cfg")
+    host = Config.get("Database", "host")
+    dbtype = Config.get("Database", "dbtype")
+    dbname = Config.get("Database", "database")
+    connectstr = dbtype + "://@" + host + "/" + dbname
     # todo: handle any database errors
-    engine = create_engine('postgresql://@localhost/' + dbname)
+    engine = create_engine(connectstr)
     conn = engine.connect()
     metadata = MetaData()
     nametable = Table('names', metadata, autoload=True, autoload_with=engine)

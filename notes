@@ -163,4 +163,13 @@ ma = Marshmallow()
 # names was generated using $ yo flask-api:resource names
 from models import names
 =========================================================================================
+I finally managed to get rid of all the warnings by editing the generated code.
+
+The methods that handle the endpoints are all stubbed out with "pass" right now. I need
+to add some code to actually do stuff.
+
+This looks like a good place to start looking for next steps:
+http://blog.luisrei.com/articles/flaskrest.html
+
+
 

@@ -1,0 +1,138 @@
+Starting over with this, then I'll take things one step at a time:
+http://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
+
+I'll be using postgres instead of mysql, but I don't think there's likely to be anything msql-specific in such a small example.
+
+Actually, Flask has a whole book, which I've started reading.
+http://flask.pocoo.org/docs/0.10/
+
+The next step is to build static pages that looks like:
+
+  a) landing page with explanation of what the site is for
+  b) main page with a menu for all the fun
+
+The landing page should have:
+  a) some kind of logo
+  b) fun quote of the day about writing
+  c) three options
+    i) log in
+    ii) sign up
+    iii) goof around anonymously
+  d) an about link
+  e) a nice image background
+  f) animation around the three options
+
+Initially, the login and signup pages should just pop up a
+modal that says "sorry, login and signup are under construction,
+but you can still do everything else except save your results
+remotely (you can export them to a local file)." That modal
+should have a link to the main page, which is where the "goof
+around anonymously" link takes you.
+
+The main page should have a menu like:
+
+[ ] character generator
+  [ ] character name generator
+  [ ] character background generator
+  [ ] character quirks generator
+  [ ] character flaws generator
+
+[ ] plot outline generator
+  [ ] select a kind of outline
+  [ ] kinds of conflict
+  [ ] character development
+  [ ] types of suspense
+  [ ] sources of humor
+
+[ ] setting generator
+  [ ] past / present / future
+  [ ] land / sea / space
+  [ ] temperature / weather
+  [ ] indoors / outdoors
+  [ ] time of day
+  [ ] season / time of year
+
+The character name, background, etc. output should go one tab of the rest of page
+The plot outline output should go a second tab of the rest of page
+The setting output goes in a third tab of the rest of page
+
+I think characters might be best done as hierarchical lists:
+
+  1) Character: Sherlock Holmes
+    a) Background: criminology, drama, pugilism, chemistry, anatomy
+    b) Quirks: loves disguises, bees, problems to solve
+    c) Flaws: takes drugs when bored, arrogant, impatient
+  2) Character: John Watson
+    a) Background: medicine, military
+    b) Quirks: writes stories
+    c) Flaws: easily fooled
+
+OK, where do I start? I guess I should start with the character names. 
+
+I've seen name generators that let you choose a style of name, such as fantasy, or
+a country or region of origin. Sometimes they also generate a psychological profile
+as well, but I'd like to separate pieces out so you can (for example) pin a name, 
+but regenerate quirks, etc.
+
+One reason to start off with Bootstrap is that I would like this to be a responsive
+app -- I think it's possible that many writers will want to use it from a phone or
+a tablet, rather than just a webpage. I'm planning to start with a paper prototype,
+so I should make several views of that based on the type of device used.
+
+The reason to stick with Backbone for this one is that I already know it (at least
+well enough for this) and that leaves me with just Flask to learn from scratch.
+Also, React or Angular are way overkill for something this simple.
+
+I've been having a brainstorm about a new kind of UI that I'd like to try.
+
+Consider that a plot has one or many characters, but that each character can
+be in multiple stories, so can have many plots. Each character has one full name,
+but (although this is probably bad writing practice) two characters can share a
+first name or last name.
+
+So rather than try to enforce a hierarchy on data, what if I let anything link to
+anything? Links would have a type and a shortcut name, but that way if you're 
+editing a plot you could see the list of characters (or add one), or click on
+a character and edit it. 
+
+Plots could have subplots and parent plots, characters could have sub-characters
+(Dr. Jekyll, Mr. Hyde), and so on. Just click the (+->) to add a link. Or if you
+have a list of things (e.g. characters) just click the (+) to add another, or
+click a character to edit or delete it. And so on.
+
+Actually, the schema could be very generic, since this isn't going to have serious
+performance issues, and be almost entirely metadata-driven.
+
+It looks more like a mind map than anything else, with nodes and edges, and where
+each node and edge has a type, and some set of attributes related to the type. So
+a character could point to a plot, but have an attribute of "first name".
+
+Then data tables (e.g. for names) would just be (id, string, type) and category
+tables would be like tags (type, tag, item_id), so for example:
+
+<name_id>,"Rognvaldr","first_name"
+and
+<category_id>,"first_name",norse,<name_id>
+
+For each type of composite thing (character, plot, setting, ...) the page might
+be split up into a list of current things of that type (which implies some sort
+of natural ID such as name, rather than an integer ID?) on the left, the content
+of a selected (or new) object of that type in the middle, and a list of lists of
+links to other objects on the right (e.g. if you're looking at a character, the
+links could be to other characters, plots, settings, etc.).
+
+Things like names or brief descriptions would be part of the object itself, even
+if they are randomly generated and chosen from a list of alternatives.
+
+Before I forget (again), I'd also like to have "writing prompts" play a part of
+this, but rather than canned ones like you might find in books or magazine, have
+them based on the content selected so far for a story, using the characters,
+settings, and plots that you've randomly generated or edited.
+
+For example, if the characters are Professor Moriarty and his cheerful idiot
+half-brother, Max, and the setting is a virtual reality simulation of 19th
+century London, a writing prompt might be "Professor Moriarty has prepared
+a nasty surprise for an enemy, wrapped as a gift, which Max finds and assumes
+is a birthday present for him. Write a scene in which something surprising
+happens that teaches both of them a lesson."
+

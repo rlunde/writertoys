@@ -1,29 +1,37 @@
 import os
+
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
     DEBUG = False
     TESTING = False
-    CSRF_ENABLED = True
-    # change this before we deploy it anywhere
-    SECRET_KEY = 'this-really-needs-to-be-changed'
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 
 class ProductionConfig(Config):
-    DEBUG = False
-
-
-class StagingConfig(Config):
-    DEVELOPMENT = True
-    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        'APP_PRODUCTION_DATABASE_URI'
+    )
 
 
 class DevelopmentConfig(Config):
-    DEVELOPMENT = True
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        'APP_DEVELOPMENT_DATABASE_URI'
+    )
 
 
 class TestingConfig(Config):
     TESTING = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        'APP_TESTING_DATABASE_URI'
+    )
+
+
+config = {
+    'production': ProductionConfig,
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
+    'default': ProductionConfig,
+}

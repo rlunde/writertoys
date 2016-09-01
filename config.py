@@ -13,6 +13,7 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'APP_PRODUCTION_DATABASE_URI'
     )
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class DevelopmentConfig(Config):
@@ -20,6 +21,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'APP_DEVELOPMENT_DATABASE_URI'
     )
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 class TestingConfig(Config):
@@ -27,6 +29,7 @@ class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'APP_TESTING_DATABASE_URI'
     )
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 config = {

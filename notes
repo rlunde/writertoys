@@ -1,138 +1,166 @@
-Starting over with this, then I'll take things one step at a time:
-http://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
+I used the yeoman flask-api generator to generate the next cut
+at a flask REST application. I got a few errors and warnings when
+running it.
 
-I'll be using postgres instead of mysql, but I don't think there's likely to be anything msql-specific in such a small example.
+First, it wanted to make sure I was running under a virtualenv, which
+I was via:
 
-Actually, Flask has a whole book, which I've started reading.
-http://flask.pocoo.org/docs/0.10/
+source ./venv/bin/activate
 
-The next step is to build static pages that looks like:
+Then after running "yo flask-api" I got these errors/warnings:
 
-  a) landing page with explanation of what the site is for
-  b) main page with a menu for all the fun
+=========================================================================================
+...
+Installing collected packages: six, marshmallow, flask-marshmallow
+  Found existing installation: six 1.4.1
+    DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project.
+    Uninstalling six-1.4.1:
+Exception:
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/pip/basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "/Library/Python/2.7/site-packages/pip/commands/install.py", line 317, in run
+    prefix=options.prefix_path,
+  File "/Library/Python/2.7/site-packages/pip/req/req_set.py", line 736, in install
+    requirement.uninstall(auto_confirm=True)
+  File "/Library/Python/2.7/site-packages/pip/req/req_install.py", line 742, in uninstall
+    paths_to_remove.remove(auto_confirm)
+  File "/Library/Python/2.7/site-packages/pip/req/req_uninstall.py", line 115, in remove
+    renames(path, new_path)
+  File "/Library/Python/2.7/site-packages/pip/utils/__init__.py", line 267, in renames
+    shutil.move(old, new)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 302, in move
+    copy2(src, real_dst)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 131, in copy2
+    copystat(src, dst)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 103, in copystat
+    os.chflags(dst, st.st_flags)
+OSError: [Errno 1] Operation not permitted: '/var/folders/g1/_n2n4lfj039dtvvlhbkd0ndh0000gn/T/pip-O3i5Xb-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info'
+Requirement already satisfied (use --upgrade to upgrade): psycopg2 in /Library/Python/2.7/site-packages
+Requirement already satisfied (use --upgrade to upgrade): flask-sqlalchemy in /Library/Python/2.7/site-packages
+Collecting marshmallow-sqlalchemy
+  Downloading marshmallow_sqlalchemy-0.10.0-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.10 in /Library/Python/2.7/site-packages (from flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): SQLAlchemy>=0.7 in /Library/Python/2.7/site-packages (from flask-sqlalchemy)
+Collecting marshmallow>=2.0.0 (from marshmallow-sqlalchemy)
+  Using cached marshmallow-2.9.1-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): Werkzeug>=0.7 in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): Jinja2>=2.4 in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): itsdangerous>=0.21 in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): MarkupSafe in /Library/Python/2.7/site-packages (from Jinja2>=2.4->Flask>=0.10->flask-sqlalchemy)
+Installing collected packages: marshmallow, marshmallow-sqlalchemy
+Successfully installed marshmallow-2.9.1 marshmallow-sqlalchemy-0.10.0
+Writing requirements file...
+   create requirements.txt
 
-The landing page should have:
-  a) some kind of logo
-  b) fun quote of the day about writing
-  c) three options
-    i) log in
-    ii) sign up
-    iii) goof around anonymously
-  d) an about link
-  e) a nice image background
-  f) animation around the three options
+All set!
 
-Initially, the login and signup pages should just pop up a
-modal that says "sorry, login and signup are under construction,
-but you can still do everything else except save your results
-remotely (you can export them to a local file)." That modal
-should have a link to the main page, which is where the "goof
-around anonymously" link takes you.
+You can run Flask's local server by executing the manager script:
+./manage.py runserver
 
-The main page should have a menu like:
+For safety's sake, this defaults to a production config with DEBUG turned off.
+You can change the config by setting the APP_CONFIG
+environment variable to "development" in your shell:
+export APP_CONFIG=development
+=========================================================================================
+Note, I'm setting that environment variable now.
 
-[ ] character generator
-  [ ] character name generator
-  [ ] character background generator
-  [ ] character quirks generator
-  [ ] character flaws generator
+Running that script blew up due to a conflict with the "six" package. After googling around
+and trying a whole bunch of things, I think Maybe this works?
 
-[ ] plot outline generator
-  [ ] select a kind of outline
-  [ ] kinds of conflict
-  [ ] character development
-  [ ] types of suspense
-  [ ] sources of humor
+pip install --ignore-installed six
+pip install flask-api --upgrade --ignore-installed six
 
-[ ] setting generator
-  [ ] past / present / future
-  [ ] land / sea / space
-  [ ] temperature / weather
-  [ ] indoors / outdoors
-  [ ] time of day
-  [ ] season / time of year
+Also did this: pip install --upgrade flask
 
-The character name, background, etc. output should go one tab of the rest of page
-The plot outline output should go a second tab of the rest of page
-The setting output goes in a third tab of the rest of page
+I changed the source_me to set environment variables:
+export APP_DEVELOPMENT_DATABASE_URI="postgresql://localhost/writertoys"
+export APP_CONFIG=development
 
-I think characters might be best done as hierarchical lists:
+I get errors when running ./manage.py shell (in order to try db.create_all())
+$ ./manage.py shell
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.script is deprecated, use flask_script instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated, use flask_marshmallow instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
 
-  1) Character: Sherlock Holmes
-    a) Background: criminology, drama, pugilism, chemistry, anatomy
-    b) Quirks: loves disguises, bees, problems to solve
-    c) Flaws: takes drugs when bored, arrogant, impatient
-  2) Character: John Watson
-    a) Background: medicine, military
-    b) Quirks: writes stories
-    c) Flaws: easily fooled
+Then ./manage.py runserver starts the flask server, but gives nearly as many warnings as a maven process:
 
-OK, where do I start? I guess I should start with the character names. 
+$ ./manage.py runserver
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.script is deprecated, use flask_script instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated, use flask_marshmallow instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.script is deprecated, use flask_script instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated, use flask_marshmallow instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+  .format(x=modname), ExtDeprecationWarning
+/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
+ * Debugger is active!
+ * Debugger pin code: 132-730-298
 
-I've seen name generators that let you choose a style of name, such as fantasy, or
-a country or region of origin. Sometimes they also generate a psychological profile
-as well, but I'd like to separate pieces out so you can (for example) pin a name, 
-but regenerate quirks, etc.
+That works, but there's nothing there yet. Let's try making a resource? How about "names"?
 
-One reason to start off with Bootstrap is that I would like this to be a responsive
-app -- I think it's possible that many writers will want to use it from a phone or
-a tablet, rather than just a webpage. I'm planning to start with a paper prototype,
-so I should make several views of that based on the type of device used.
+yo flask-api:resource names
 
-The reason to stick with Backbone for this one is that I already know it (at least
-well enough for this) and that leaves me with just Flask to learn from scratch.
-Also, React or Angular are way overkill for something this simple.
+That says:
 
-I've been having a brainstorm about a new kind of UI that I'd like to try.
+$ yo flask-api:resource names
+? Which HTTP methods would you like to support? (Press <space> to select)GET
+Creating endpoint at /api/v1/names
+   create app/models/names.py
+   create app/schemas/names.py
+   create app/api_v1/names.py
 
-Consider that a plot has one or many characters, but that each character can
-be in multiple stories, so can have many plots. Each character has one full name,
-but (although this is probably bad writing practice) two characters can share a
-first name or last name.
+All set!
 
-So rather than try to enforce a hierarchy on data, what if I let anything link to
-anything? Links would have a type and a shortcut name, but that way if you're 
-editing a plot you could see the list of characters (or add one), or click on
-a character and edit it. 
+Be sure to import your fancy new endpoint into your API blueprint
+in your API package's __init__.py, like this:
+from . import names
 
-Plots could have subplots and parent plots, characters could have sub-characters
-(Dr. Jekyll, Mr. Hyde), and so on. Just click the (+->) to add a link. Or if you
-have a list of things (e.g. characters) just click the (+) to add another, or
-click a character to edit or delete it. And so on.
+I decided I needed the other HTTP verbs too, so I regenerated it:
 
-Actually, the schema could be very generic, since this isn't going to have serious
-performance issues, and be almost entirely metadata-driven.
+$ yo flask-api:resource names
+? Which HTTP methods would you like to support? GET, POST, PUT, DELETE
+Creating endpoint at /api/v1/names
+identical app/models/names.py
+identical app/schemas/names.py
+ conflict app/api_v1/names.py
+? Overwrite app/api_v1/names.py? overwrite
+    force app/api_v1/names.py
 
-It looks more like a mind map than anything else, with nodes and edges, and where
-each node and edge has a type, and some set of attributes related to the type. So
-a character could point to a plot, but have an attribute of "first name".
+All set!
 
-Then data tables (e.g. for names) would just be (id, string, type) and category
-tables would be like tags (type, tag, item_id), so for example:
+Be sure to import your fancy new endpoint into your API blueprint
+in your API package's __init__.py, like this:
+from . import names
 
-<name_id>,"Rognvaldr","first_name"
-and
-<category_id>,"first_name",norse,<name_id>
+I did what it said, but it can't find them:
 
-For each type of composite thing (character, plot, setting, ...) the page might
-be split up into a list of current things of that type (which implies some sort
-of natural ID such as name, rather than an integer ID?) on the left, the content
-of a selected (or new) object of that type in the middle, and a list of lists of
-links to other objects on the right (e.g. if you're looking at a character, the
-links could be to other characters, plots, settings, etc.).
+File "/Users/ron/Projects/github/writertoys/writertoys/app/__init__.py", line 7, in <module>
+    from . import names
+ImportError: cannot import name names
 
-Things like names or brief descriptions would be part of the object itself, even
-if they are randomly generated and chosen from a list of alternatives.
+The trick was to import from models, rather than ".", and to do that AFTER the db variable
+is set:
+=========================================================================================
+db = SQLAlchemy()
+ma = Marshmallow()
 
-Before I forget (again), I'd also like to have "writing prompts" play a part of
-this, but rather than canned ones like you might find in books or magazine, have
-them based on the content selected so far for a story, using the characters,
-settings, and plots that you've randomly generated or edited.
-
-For example, if the characters are Professor Moriarty and his cheerful idiot
-half-brother, Max, and the setting is a virtual reality simulation of 19th
-century London, a writing prompt might be "Professor Moriarty has prepared
-a nasty surprise for an enemy, wrapped as a gift, which Max finds and assumes
-is a birthday present for him. Write a scene in which something surprising
-happens that teaches both of them a lesson."
+# names was generated using $ yo flask-api:resource names
+from models import names
+=========================================================================================
 

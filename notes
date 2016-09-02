@@ -166,10 +166,12 @@ from models import names
 I finally managed to get rid of all the warnings by editing the generated code.
 
 The methods that handle the endpoints are all stubbed out with "pass" right now. I need
-to add some code to actually do stuff.
+to add some code to actually do stuff. From the python doc, "pass" is just there to do
+nothing when you need something in a spot to avoid a syntax error:
+"The pass statement does nothing. It can be used when a statement is required syntactically 
+but the program requires no action."
 
 This looks like a good place to start looking for next steps:
 http://blog.luisrei.com/articles/flaskrest.html
-
 
 

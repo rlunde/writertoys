@@ -28,8 +28,8 @@ database is hard-coded to localhost.
 
 So the next things to do are:
 
-1) pull the database connection string from a config file
-2) return names rather than print them out (in the module)
+x) pull the database connection string from a config file
+x) return names rather than print them out (in the module)
 3) test a few things
 4) check for errors in database connection and function arguments
 5) make a basic web page using Flask that just calls the module (Flask

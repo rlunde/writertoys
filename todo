@@ -1,0 +1,21 @@
+I have the database stuff (good enough for now) under data,
+and the cli implementation under cli, for name generation.
+
+I used yeoman ("yo flask-api") to generate this top level python
+for flask in a virtualenv.  See "notes" for the gory details.
+
+So next, in order to have a minimal Flask server that has
+an API to generate names, and a web page that uses the API,
+I just need to:
+
+1) make a directory for html/css/js and an instance of nginx
+   that serves that content.
+2) use a reverse proxy in the nginx config to map the flask
+   service to an API url.
+3) make a tiny web page that calls ajax GET to get a random
+   name (or a collection of names)
+4) make the flask code to load the names in memory, and handle
+   the /names/random URI (probably /names/random?gender=female&number=10 )
+5) do another paper prototype to expand the names feature and
+   add another.
+

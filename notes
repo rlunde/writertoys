@@ -206,3 +206,23 @@ Then "open http://localhost" opened the default index.html page for the client.
 
 Next up, start flask and implement the names API!
 
+Well, after all that fiddling around with yo flask-api, I think it's another case of a
+generator that depends way too much on magic goop for me to use. I want something
+like the boilerplate of a flask hello world, that I can gradually edit myself into
+something -- I don't want a marshmallow reflection widget that magically makes something
+nobody has ever had time to document, and that would take me far longer to figure out
+than it's worth.
+
+So, starting over yet again.
+
+Following the guide here: http://blog.luisrei.com/articles/flaskrest.html
+I created app/app.py and did this:
+
+. source_me 
+python app/app.py
+
+Which runs Flask on port 5000, so this URL returns "Welcome"
+http://localhost:5000/
+
+Awesome. A baby step, without magical mystery goop!
+

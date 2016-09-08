@@ -8,7 +8,7 @@ So next, in order to have a minimal Flask server that has
 an API to generate names, and a web page that uses the API,
 I just need to:
 
-1) make a directory for html/css/js and an instance of nginx
+x) make a directory for html/css/js and an instance of nginx
    that serves that content.
 2) use a reverse proxy in the nginx config to map the flask
    service to an API url.

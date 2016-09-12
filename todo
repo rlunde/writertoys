@@ -8,14 +8,18 @@ So next, in order to have a minimal Flask server that has
 an API to generate names, and a web page that uses the API,
 I just need to:
 
-x) make a directory for html/css/js and an instance of nginx
-   that serves that content.
-2) use a reverse proxy in the nginx config to map the flask
-   service to an API url.
-3) make a tiny web page that calls ajax GET to get a random
-   name (or a collection of names)
-4) make the flask code to load the names in memory, and handle
-   the /names/random URI (probably /names/random?gender=female&number=10 )
-5) do another paper prototype to expand the names feature and
-   add another.
+Done:
+
+* make a directory for html/css/js and an instance of nginx that serves that content.
+* use a reverse proxy in the nginx config to map the flask service to an API url.
+
+ToDo:
+
+* modify the web page to hide all the landing page stuff when someone clicks on names link
+* use flask code to load the names in memory, and handle the 
+  /names/random URI (probably /names/random?gender=female&number=10 )
+* do a paper prototype of what a SPA should look like
+* modify page to call GET API to get a random name (or a collection of names)
+* make the simplest names generation page that I can
+* change it to save names by dragging them to a save list
 

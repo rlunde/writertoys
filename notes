@@ -226,3 +226,6 @@ http://localhost:5000/
 
 Awesome. A baby step, without magical mystery goop!
 
+I added a "landing" class to the sections that should be shown in the landing page and hidden in the SPA
+page. Now I just need to add a SPA section and a jQuery toggle (for now) to show/hide one or the other.
+

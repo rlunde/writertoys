@@ -229,3 +229,20 @@ Awesome. A baby step, without magical mystery goop!
 I added a "landing" class to the sections that should be shown in the landing page and hidden in the SPA
 page. Now I just need to add a SPA section and a jQuery toggle (for now) to show/hide one or the other.
 
+There are javascript errors showing up in the javascript from the Start Bootstrap Creative
+sample, so I thought I'd pretty print it to see if I can figure it out. I found a pretty printer
+for the Atom editor that I'm learning, and discovered that atom comes with its own package manager
+(of course):
+
+apm install atom-beautify
+
+It looks awesome so far, and uses a ton of beautifiers from all over, on every language you've
+ever heard of: https://atom.io/packages/atom-beautify
+
+As I looked at it, I realized that I could just include creative.js rather than creative.min.js :-)
+
+The problem turns out to be that the href of the link I click on (e.g. characters) points to an anchor
+that doesn't exist. I put those in, but after fiddling with it for an hour or so, I think that page
+is just too fancy for me to use as other than a landing page. I think the thing to do it to make
+a SPA page that's much simpler.
+

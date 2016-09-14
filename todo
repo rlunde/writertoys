@@ -16,6 +16,7 @@ Done:
 ToDo:
 
 * modify the web page to hide all the landing page stuff when someone clicks on names link
+  New Idea: have all the links go to a "spa" page, rather than mess with the landing page
 * use flask code to load the names in memory, and handle the 
   /names/random URI (probably /names/random?gender=female&number=10 )
 * do a paper prototype of what a SPA should look like

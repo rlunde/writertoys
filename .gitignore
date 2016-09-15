@@ -56,3 +56,6 @@ target/
 
 # Virtual environment
 venv
+
+# client stuff
+client/examples

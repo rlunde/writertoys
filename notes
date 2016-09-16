@@ -246,3 +246,16 @@ that doesn't exist. I put those in, but after fiddling with it for an hour or so
 is just too fancy for me to use as other than a landing page. I think the thing to do it to make
 a SPA page that's much simpler.
 
+I moved that bootstrap template to landing-client, and tried starting client over as a minimal react.js
+app. That was an adventure as well. The "recommended" way to start a new react app is with:
+https://github.com/facebookincubator/create-react-app
+
+However, that uses a TON of node stuff. You create the "production" build with "npm run build" but what
+you get out of that is javascript that is unreadable/untouchable by humans.
+
+My theory is that a simple app should have simple code. I'm starting with the react Starter Kit which
+assumes you may be adding react to an existing app, which is much, much simpler.
+
+https://facebook.github.io/react/docs/getting-started.html
+
+

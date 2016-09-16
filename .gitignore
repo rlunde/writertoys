@@ -59,3 +59,15 @@ venv
 
 # client stuff
 client/examples
+
+# misc data, config, etc.
+.editorconfig
+.gitattributes
+.yo-rc.json
+data/Top1000surnames.xls
+data/female-first
+data/male-first
+data/source
+data/surnames.zip
+data/surnames/app_c.csv
+data/surnames/app_c.xlsx

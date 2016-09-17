@@ -3,26 +3,28 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Hello React!</title>
-    <script src="js/react.js"></script>
-    <script src="js/react-dom.js"></script>
+    <title>WriterToys</title>
+    <script src="https://unpkg.com/react@15.3.1/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
 </head>
 
 <body>
-    <div id="example"></div>
-    <script type="text/babel">
-        ReactDOM.render(
-        <h1>This example is from: https://facebook.github.io/react/docs/getting-started.html</h1>, document.getElementById('example') );
-    </script>
     <div id="todo">
-      <span>To Do:</span>
+        <h1>WriterToys</h1>
+        <h6>I'm getting started by following <a href="https://facebook.github.io/react/docs/tutorial.html">the React tutorial</a></h6>
+        <span>To Do:</span>
         <ol>
+            <li>go through the React tutorial to make the basic structure of a page</li>
             <li>add a button to get names</li>
             <li>hook the button up to an AJAX get from the flask app</li>
             <li>display the result</li>
         </ol>
     </div>
+    <div id="names"></div>
+    <script type="text/babel" src="js/writertoys.jsx"></script>
 </body>
 
 </html>

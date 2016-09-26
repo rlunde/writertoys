@@ -3,7 +3,7 @@ var NamesList = React.createClass({
         return (
             <div className="namesList">
               <span>Number of names: </span>
-                <input type="number" id="numNames"></input>
+                <input className="numberText" type="number" id="numNames"></input>
                 <span>Type of names: </span>
                 <select className="nameGenders" id="nameGender">
                     <option value="female">female</option>

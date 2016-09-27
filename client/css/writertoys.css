@@ -1,6 +1,31 @@
 .namesList {
-  display: block;
-  height: 200px;
-  position: relative;
-  width: 400px;
+    display: block;
+    width: 300px;
+    float: left;
+}
+
+.numberText {
+    clear: both;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.nameGenders {
+    clear: both;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.namesButton {
+    clear: both;
+    float: right;
+}
+
+.nameFormItem {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.itemDone {
+    text-decoration: line-through;
 }

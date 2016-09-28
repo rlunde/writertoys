@@ -1,5 +1,10 @@
 var NamesList = React.createClass({
+
+    handleClick: function() {
+        getnames($('nameGenders').val(), $('numNames').text());
+    },
     render: function() {
+
         return (
             <div className="namesList">
                 <div className="nameFormItem">Number of names:
@@ -12,7 +17,7 @@ var NamesList = React.createClass({
                         <option value="any">any</option>
                     </select>
                 </div>
-                <button className="namesButton">Get Names!</button>
+                <button onClick={this.handleClick} className="namesButton">Get Names!</button>
             </div>
         );
     }

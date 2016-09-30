@@ -1,4 +1,5 @@
 from flask import Flask, url_for, json, request
+from crossdomain import crossdomain
 app = Flask(__name__)
 
 # stolen from Jonathan Tushman's: http://flask.pocoo.org/snippets/117/
@@ -27,6 +28,7 @@ def api_routes():
     return list_routes()
 
 @app.route('/names')
+@crossdomain(origin='*')
 def api_names():
     gender = request.args.get('gender', '')
     if not gender:
@@ -37,4 +39,4 @@ def api_names():
     return url_for('api_names') + " called with gender \"" + gender + "\" and number \"" + number + "\""
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='localhost',port=5000)

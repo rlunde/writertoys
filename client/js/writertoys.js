@@ -1,10 +1,8 @@
 /* do some require.js stuff here? */
 /* TODO: make the url configurable */
 function getnames(gender, number) {
-    $.ajax({
-            url: 'http://localhost:5000/names?gender=' + gender + '&number=' + number,
-            success: gotnames
-        }).done(function() {
+    var jqxhr = $.get('http://localhost:5000/names?gender=' + gender + '&number=' + number, gotnames)
+        .done(function() {
             alert("second success");
         })
         .fail(function() {

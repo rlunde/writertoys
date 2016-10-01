@@ -153,3 +153,8 @@ file of English words in /usr/share/dict/words (235886 words on mine, currently)
 pulling a few out of there at random would be pretty easy. I assume there's an 
 equivalent thing for linux, assuming that that's where the web server is running.
 
+I think it would also be fun to have a chatbot interface to writertoys! I have been
+thinking about starting off each piece as a library, then a command line runner for
+that, and finally a web interface. It seems like a chatbot interface would be easy
+to layer on to the same underlying libraries.
+

@@ -15,13 +15,13 @@ Done:
 *) make a button, a numeric text field for number of names, and a gender selector
 
 ToDo:
-    3) do some minimal layout of the form in CSS
-    3) handle the button click by validating data and making AJAX call
-  2) make a form to collect parameters for name generation
-1) make the simplest names generation page that I can
-1) use flask code to load the names in memory, and handle the 
-  /names/random URI (probably /names/random?gender=female&number=10 )
-1) do a paper prototype of what a SPA should look like
-  2) change it to save names by dragging them to a save list
-1) modify page to call GET API to get a random name (or a collection of names)
-1) see if I can generate part of the code for the names page using goodwin
+
+x) make the simplest names generation page that I can
+
+2) in flask, load the names in memory, and handle the /names/random URI (e.g. /names/random?gender=female&number=10 )
+  a) figure out how to start Postgres again (switched to Sierra which broke things)
+3) do a paper prototype of what a SPA should look like
+  a) change it to save names by dragging them to a save list
+4) modify page to call GET API to get a random name (or a collection of names)
+5) see if I can generate part of the code for the names page using goodwin
+

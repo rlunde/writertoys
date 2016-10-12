@@ -1,5 +1,11 @@
 from flask import Flask, url_for, json, request
 from crossdomain import crossdomain
+import logging
+from logging.handlers import RotatingFileHandler
+import sys,os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'cli'))
+import randnames
+
 app = Flask(__name__)
 
 # stolen from Jonathan Tushman's: http://flask.pocoo.org/snippets/117/
@@ -36,7 +42,21 @@ def api_names():
     number = request.args.get('number', '')
     if not number:
         number = "1" # remember this is a string
-    return url_for('api_names') + " called with gender \"" + gender + "\" and number \"" + number + "\""
+    app.logger.info(url_for('api_names') + " called with gender \"" + gender + "\" and number \"" + number + "\"")
+    return generate_names()
+
+def generate_names(gender, number):
+    rval = ""
+    for n in range(0,int(number)):
+        first_name = randnames.generate_name(gender, 'first')
+        last_name = randnames.generate_name(gender, 'last')
+        full_name = first_name + " " + last_name
+        rval = rval + full_name + "<br/>"
 
 if __name__ == '__main__':
+    # TODO: figure out what we want to do for logging
+    randnames.load_names() # cache stuff
+    handler = RotatingFileHandler('writertoys.log', maxBytes=10000, backupCount=1)
+    handler.setLevel(logging.INFO)
+    app.logger.addHandler(handler)
     app.run(host='localhost',port=5000)

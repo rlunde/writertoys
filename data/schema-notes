@@ -42,3 +42,9 @@ Edge:
 Note that this implies directionality, which you might want sometimes. Sometimes
 they're likely to be bi-directional -- for example, a story con have multiple 
 characters, and a character can be part of multiple stories.
+
+Postgres stopped working when I upgraded my Macbook Pro to Sierra, and by then I'd
+forgotten which version of postgres I'd installed, and how. It turns out I'd installed
+Postgres.app, which I had to redo, and then recreate the writertoys user/role and
+database.
+

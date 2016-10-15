@@ -262,4 +262,19 @@ I'm trying to make at least a tiny bit of progress every day, which is why this 
 many commits so far. Hopefully I'll get to the point soon where there's more actual stuff working,
 but for now, I'm just focused on consistency.
 
+It turned out that my MacOS Sierra upgrade messed up my local postgres installation, so I ended
+up re-installing Postgres.app and rebuilding the writertoys database.
+
+I hit an error after re-installing postgres and trying to run the database loader:
+Library not loaded: /Applications/Postgres.app/Contents/Versions/9.4/lib/libssl.1.0.0.dylib
+
+The workaround I found on stack overflow was:
+Library not loaded: /Applications/Postgres.app/Contents/Versions/9.4/lib/libssl.1.0.0.dylib
+
+I think since Postgres.app is 9.6 (latest) and psycopg2 is hard-coded to look for 9.4, it's a problem.
+I'm going to try installing an older version of Postgres.app.
+
+That didn't work either, since it's still looking for 9.4 and I installed 9.5. I ended up making
+a symlink from 9.4 to 9.5 under Postgres.app, which might break something in an obscure way, but
+seems to have got me past the current hurdle.
 

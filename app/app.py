@@ -43,7 +43,7 @@ def api_names():
     if not number:
         number = "1" # remember this is a string
     app.logger.info(url_for('api_names') + " called with gender \"" + gender + "\" and number \"" + number + "\"")
-    return generate_names()
+    return generate_names(gender, number)
 
 def generate_names(gender, number):
     rval = ""
@@ -52,6 +52,7 @@ def generate_names(gender, number):
         last_name = randnames.generate_name(gender, 'last')
         full_name = first_name + " " + last_name
         rval = rval + full_name + "<br/>"
+    return rval
 
 if __name__ == '__main__':
     # TODO: figure out what we want to do for logging

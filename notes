@@ -1,9 +1,9 @@
-I used the yeoman flask-api generator to generate the next cut
-at a flask REST application. I got a few errors and warnings when
+I used the yeoman flask-api generator to generate the next cut at
+a flask REST application. I got a few errors and warnings when
 running it.
 
-First, it wanted to make sure I was running under a virtualenv, which
-I was via:
+First, it wanted to make sure I was running under a virtualenv,
+which I was via:
 
 source ./venv/bin/activate
 
@@ -13,44 +13,67 @@ Then after running "yo flask-api" I got these errors/warnings:
 ...
 Installing collected packages: six, marshmallow, flask-marshmallow
   Found existing installation: six 1.4.1
-    DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project.
-    Uninstalling six-1.4.1:
-Exception:
-Traceback (most recent call last):
-  File "/Library/Python/2.7/site-packages/pip/basecommand.py", line 215, in main
+    DEPRECATION: Uninstalling a distutils installed project (six)
+    has been deprecated and will be removed in a future version.
+    This is due to the fact that uninstalling a distutils project
+    will only partially uninstall the project.  Uninstalling
+    six-1.4.1:
+Exception: Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/pip/basecommand.py", line
+  215, in main
     status = self.run(options, args)
-  File "/Library/Python/2.7/site-packages/pip/commands/install.py", line 317, in run
+  File "/Library/Python/2.7/site-packages/pip/commands/install.py",
+  line 317, in run
     prefix=options.prefix_path,
-  File "/Library/Python/2.7/site-packages/pip/req/req_set.py", line 736, in install
+  File "/Library/Python/2.7/site-packages/pip/req/req_set.py", line
+  736, in install
     requirement.uninstall(auto_confirm=True)
-  File "/Library/Python/2.7/site-packages/pip/req/req_install.py", line 742, in uninstall
+  File "/Library/Python/2.7/site-packages/pip/req/req_install.py",
+  line 742, in uninstall
     paths_to_remove.remove(auto_confirm)
-  File "/Library/Python/2.7/site-packages/pip/req/req_uninstall.py", line 115, in remove
+  File "/Library/Python/2.7/site-packages/pip/req/req_uninstall.py",
+  line 115, in remove
     renames(path, new_path)
-  File "/Library/Python/2.7/site-packages/pip/utils/__init__.py", line 267, in renames
+  File "/Library/Python/2.7/site-packages/pip/utils/__init__.py",
+  line 267, in renames
     shutil.move(old, new)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 302, in move
+  File
+  "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py",
+  line 302, in move
     copy2(src, real_dst)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 131, in copy2
+  File
+  "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py",
+  line 131, in copy2
     copystat(src, dst)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 103, in copystat
+  File
+  "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py",
+  line 103, in copystat
     os.chflags(dst, st.st_flags)
-OSError: [Errno 1] Operation not permitted: '/var/folders/g1/_n2n4lfj039dtvvlhbkd0ndh0000gn/T/pip-O3i5Xb-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info'
-Requirement already satisfied (use --upgrade to upgrade): psycopg2 in /Library/Python/2.7/site-packages
-Requirement already satisfied (use --upgrade to upgrade): flask-sqlalchemy in /Library/Python/2.7/site-packages
-Collecting marshmallow-sqlalchemy
+OSError: [Errno 1] Operation not permitted:
+'/var/folders/g1/_n2n4lfj039dtvvlhbkd0ndh0000gn/T/pip-O3i5Xb-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info'
+Requirement already satisfied (use --upgrade to upgrade): psycopg2
+in /Library/Python/2.7/site-packages Requirement already satisfied
+(use --upgrade to upgrade): flask-sqlalchemy in
+/Library/Python/2.7/site-packages Collecting marshmallow-sqlalchemy
   Downloading marshmallow_sqlalchemy-0.10.0-py2.py3-none-any.whl
-Requirement already satisfied (use --upgrade to upgrade): Flask>=0.10 in /Library/Python/2.7/site-packages (from flask-sqlalchemy)
-Requirement already satisfied (use --upgrade to upgrade): SQLAlchemy>=0.7 in /Library/Python/2.7/site-packages (from flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): Flask>=0.10
+in /Library/Python/2.7/site-packages (from flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): SQLAlchemy>=0.7
+in /Library/Python/2.7/site-packages (from flask-sqlalchemy)
 Collecting marshmallow>=2.0.0 (from marshmallow-sqlalchemy)
   Using cached marshmallow-2.9.1-py2.py3-none-any.whl
-Requirement already satisfied (use --upgrade to upgrade): Werkzeug>=0.7 in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
-Requirement already satisfied (use --upgrade to upgrade): Jinja2>=2.4 in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
-Requirement already satisfied (use --upgrade to upgrade): itsdangerous>=0.21 in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
-Requirement already satisfied (use --upgrade to upgrade): MarkupSafe in /Library/Python/2.7/site-packages (from Jinja2>=2.4->Flask>=0.10->flask-sqlalchemy)
-Installing collected packages: marshmallow, marshmallow-sqlalchemy
-Successfully installed marshmallow-2.9.1 marshmallow-sqlalchemy-0.10.0
-Writing requirements file...
+Requirement already satisfied (use --upgrade to upgrade): Werkzeug>=0.7
+in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade): Jinja2>=2.4
+in /Library/Python/2.7/site-packages (from Flask>=0.10->flask-sqlalchemy)
+Requirement already satisfied (use --upgrade to upgrade):
+itsdangerous>=0.21 in /Library/Python/2.7/site-packages (from
+Flask>=0.10->flask-sqlalchemy) Requirement already satisfied (use
+--upgrade to upgrade): MarkupSafe in /Library/Python/2.7/site-packages
+(from Jinja2>=2.4->Flask>=0.10->flask-sqlalchemy) Installing collected
+packages: marshmallow, marshmallow-sqlalchemy Successfully installed
+marshmallow-2.9.1 marshmallow-sqlalchemy-0.10.0 Writing requirements
+file...
    create requirements.txt
 
 All set!
@@ -58,86 +81,117 @@ All set!
 You can run Flask's local server by executing the manager script:
 ./manage.py runserver
 
-For safety's sake, this defaults to a production config with DEBUG turned off.
-You can change the config by setting the APP_CONFIG
-environment variable to "development" in your shell:
-export APP_CONFIG=development
+For safety's sake, this defaults to a production config with DEBUG
+turned off.  You can change the config by setting the APP_CONFIG
+environment variable to "development" in your shell: export
+APP_CONFIG=development
 =========================================================================================
 Note, I'm setting that environment variable now.
 
-Running that script blew up due to a conflict with the "six" package. After googling around
-and trying a whole bunch of things, I think Maybe this works?
+Running that script blew up due to a conflict with the "six" package.
+After googling around and trying a whole bunch of things, I think
+Maybe this works?
 
-pip install --ignore-installed six
-pip install flask-api --upgrade --ignore-installed six
+pip install --ignore-installed six pip install flask-api --upgrade
+--ignore-installed six
 
 Also did this: pip install --upgrade flask
 
-I changed the source_me to set environment variables:
-export APP_DEVELOPMENT_DATABASE_URI="postgresql://localhost/writertoys"
+I changed the source_me to set environment variables: export
+APP_DEVELOPMENT_DATABASE_URI="postgresql://localhost/writertoys"
 export APP_CONFIG=development
 
-I get errors when running ./manage.py shell (in order to try db.create_all())
-$ ./manage.py shell
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.script is deprecated, use flask_script instead.
+I get errors when running ./manage.py shell (in order to try
+db.create_all()) $ ./manage.py shell
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.script is deprecated,
+use flask_script instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated, use flask_marshmallow instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated,
+use flask_marshmallow instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated,
+use flask_sqlalchemy instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
-  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
+/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800:
+UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead
+and will be disabled by default in the future.  Set it to True to
+suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant
+  overhead and will be disabled by default in the future.  Set it
+  to True to suppress this warning.')
 
-Then ./manage.py runserver starts the flask server, but gives nearly as many warnings as a maven process:
+Then ./manage.py runserver starts the flask server, but gives nearly
+as many warnings as a maven process:
 
 $ ./manage.py runserver
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.script is deprecated, use flask_script instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.script is deprecated,
+use flask_script instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated, use flask_marshmallow instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated,
+use flask_marshmallow instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated,
+use flask_sqlalchemy instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
-  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- * Restarting with stat
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.script is deprecated, use flask_script instead.
+/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800:
+UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead
+and will be disabled by default in the future.  Set it to True to
+suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant
+  overhead and will be disabled by default in the future.  Set it
+  to True to suppress this warning.')
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) *
+ Restarting with stat
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.script is deprecated,
+use flask_script instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated, use flask_marshmallow instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.marshmallow is deprecated,
+use flask_marshmallow instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask/exthook.py:71: ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated, use flask_sqlalchemy instead.
+/Library/Python/2.7/site-packages/flask/exthook.py:71:
+ExtDeprecationWarning: Importing flask.ext.sqlalchemy is deprecated,
+use flask_sqlalchemy instead.
   .format(x=modname), ExtDeprecationWarning
-/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
-  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
- * Debugger is active!
- * Debugger pin code: 132-730-298
+/Library/Python/2.7/site-packages/flask_sqlalchemy/__init__.py:800:
+UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead
+and will be disabled by default in the future.  Set it to True to
+suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant
+  overhead and will be disabled by default in the future.  Set it
+  to True to suppress this warning.')
+ * Debugger is active!  * Debugger pin code: 132-730-298
 
-That works, but there's nothing there yet. Let's try making a resource? How about "names"?
+That works, but there's nothing there yet. Let's try making a
+resource? How about "names"?
 
 yo flask-api:resource names
 
 That says:
 
-$ yo flask-api:resource names
-? Which HTTP methods would you like to support? (Press <space> to select)GET
-Creating endpoint at /api/v1/names
-   create app/models/names.py
-   create app/schemas/names.py
-   create app/api_v1/names.py
+$ yo flask-api:resource names ? Which HTTP methods would you like
+to support? (Press <space> to select)GET Creating endpoint at
+/api/v1/names
+   create app/models/names.py create app/schemas/names.py create
+   app/api_v1/names.py
 
 All set!
 
 Be sure to import your fancy new endpoint into your API blueprint
-in your API package's __init__.py, like this:
-from . import names
+in your API package's __init__.py, like this: from . import names
 
 I decided I needed the other HTTP verbs too, so I regenerated it:
 
-$ yo flask-api:resource names
-? Which HTTP methods would you like to support? GET, POST, PUT, DELETE
-Creating endpoint at /api/v1/names
-identical app/models/names.py
-identical app/schemas/names.py
+$ yo flask-api:resource names ? Which HTTP methods would you like
+to support? GET, POST, PUT, DELETE Creating endpoint at /api/v1/names
+identical app/models/names.py identical app/schemas/names.py
  conflict app/api_v1/names.py
 ? Overwrite app/api_v1/names.py? overwrite
     force app/api_v1/names.py
@@ -145,49 +199,46 @@ identical app/schemas/names.py
 All set!
 
 Be sure to import your fancy new endpoint into your API blueprint
-in your API package's __init__.py, like this:
-from . import names
+in your API package's __init__.py, like this: from . import names
 
 I did what it said, but it can't find them:
 
-File "/Users/ron/Projects/github/writertoys/writertoys/app/__init__.py", line 7, in <module>
+File "/Users/ron/Projects/github/writertoys/writertoys/app/__init__.py",
+line 7, in <module>
     from . import names
 ImportError: cannot import name names
 
-The trick was to import from models, rather than ".", and to do that AFTER the db variable
-is set:
+The trick was to import from models, rather than ".", and to do
+that AFTER the db variable is set:
 =========================================================================================
-db = SQLAlchemy()
-ma = Marshmallow()
+db = SQLAlchemy() ma = Marshmallow()
 
-# names was generated using $ yo flask-api:resource names
-from models import names
+# names was generated using $ yo flask-api:resource names from
+models import names
 =========================================================================================
-I finally managed to get rid of all the warnings by editing the generated code.
+I finally managed to get rid of all the warnings by editing the
+generated code.
 
-The methods that handle the endpoints are all stubbed out with "pass" right now. I need
-to add some code to actually do stuff. From the python doc, "pass" is just there to do
-nothing when you need something in a spot to avoid a syntax error:
-"The pass statement does nothing. It can be used when a statement is required syntactically 
+The methods that handle the endpoints are all stubbed out with
+"pass" right now. I need to add some code to actually do stuff.
+From the python doc, "pass" is just there to do nothing when you
+need something in a spot to avoid a syntax error: "The pass statement
+does nothing. It can be used when a statement is required syntactically
 but the program requires no action."
 
 This looks like a good place to start looking for next steps:
 http://blog.luisrei.com/articles/flaskrest.html
 
-Now I wanted to install nginx, and configure it to serve the client pieces out of port 80,
-and proxy the rest to flask
+Now I wanted to install nginx, and configure it to serve the client
+pieces out of port 80, and proxy the rest to flask
 
-  $  brew doctor
-  $  brew update
-  $  brew cleanup
-  $  brew install nginx
+  $  brew doctor $  brew update $  brew cleanup $  brew install
+  nginx
 
-That said:
--------------------------
-Docroot is: /usr/local/var/www
+That said: ------------------------- Docroot is: /usr/local/var/www
 
-The default port has been set in /usr/local/etc/nginx/nginx.conf to 8080 so that
-nginx can run without sudo.
+The default port has been set in /usr/local/etc/nginx/nginx.conf
+to 8080 so that nginx can run without sudo.
 
 nginx will load all files in /usr/local/etc/nginx/servers/.
 
@@ -197,28 +248,31 @@ Or, if you don't want/need a background service you can just run:
   nginx
 -------------------------
 
-Then I changed the root to the local client directory, and started nginx as a service on port 80:
+Then I changed the root to the local client directory, and started
+nginx as a service on port 80:
 
-  $  sudo vi /usr/local/etc/nginx/nginx.conf
-  $  sudo brew services start nginx
+  $  sudo vi /usr/local/etc/nginx/nginx.conf $  sudo brew services
+  start nginx
 
-Then "open http://localhost" opened the default index.html page for the client.
+Then "open http://localhost" opened the default index.html page for
+the client.
 
 Next up, start flask and implement the names API!
 
-Well, after all that fiddling around with yo flask-api, I think it's another case of a
-generator that depends way too much on magic goop for me to use. I want something
-like the boilerplate of a flask hello world, that I can gradually edit myself into
-something -- I don't want a marshmallow reflection widget that magically makes something
-nobody has ever had time to document, and that would take me far longer to figure out
-than it's worth.
+Well, after all that fiddling around with yo flask-api, I think
+it's another case of a generator that depends way too much on magic
+goop for me to use. I want something like the boilerplate of a flask
+hello world, that I can gradually edit myself into something -- I
+don't want a marshmallow reflection widget that magically makes
+something nobody has ever had time to document, and that would take
+me far longer to figure out than it's worth.
 
 So, starting over yet again.
 
 Following the guide here: http://blog.luisrei.com/articles/flaskrest.html
 I created app/app.py and did this:
 
-. source_me 
+. source_me
 python app/app.py
 
 Which runs Flask on port 5000, so this URL returns "Welcome"
@@ -226,55 +280,70 @@ http://localhost:5000/
 
 Awesome. A baby step, without magical mystery goop!
 
-I added a "landing" class to the sections that should be shown in the landing page and hidden in the SPA
-page. Now I just need to add a SPA section and a jQuery toggle (for now) to show/hide one or the other.
+I added a "landing" class to the sections that should be shown in
+the landing page and hidden in the SPA page. Now I just need to add
+a SPA section and a jQuery toggle (for now) to show/hide one or the
+other.
 
-There are javascript errors showing up in the javascript from the Start Bootstrap Creative
-sample, so I thought I'd pretty print it to see if I can figure it out. I found a pretty printer
-for the Atom editor that I'm learning, and discovered that atom comes with its own package manager
-(of course):
+There are javascript errors showing up in the javascript from the
+Start Bootstrap Creative sample, so I thought I'd pretty print it
+to see if I can figure it out. I found a pretty printer for the
+Atom editor that I'm learning, and discovered that atom comes with
+its own package manager (of course):
 
 apm install atom-beautify
 
-It looks awesome so far, and uses a ton of beautifiers from all over, on every language you've
-ever heard of: https://atom.io/packages/atom-beautify
+It looks awesome so far, and uses a ton of beautifiers from all
+over, on every language you've ever heard of:
+https://atom.io/packages/atom-beautify
 
-As I looked at it, I realized that I could just include creative.js rather than creative.min.js :-)
+As I looked at it, I realized that I could just include creative.js
+rather than creative.min.js :-)
 
-The problem turns out to be that the href of the link I click on (e.g. characters) points to an anchor
-that doesn't exist. I put those in, but after fiddling with it for an hour or so, I think that page
-is just too fancy for me to use as other than a landing page. I think the thing to do it to make
-a SPA page that's much simpler.
+The problem turns out to be that the href of the link I click on
+(e.g. characters) points to an anchor that doesn't exist. I put
+those in, but after fiddling with it for an hour or so, I think
+that page is just too fancy for me to use as other than a landing
+page. I think the thing to do it to make a SPA page that's much
+simpler.
 
-I moved that bootstrap template to landing-client, and tried starting client over as a minimal react.js
-app. That was an adventure as well. The "recommended" way to start a new react app is with:
+I moved that bootstrap template to landing-client, and tried starting
+client over as a minimal react.js app. That was an adventure as
+well. The "recommended" way to start a new react app is with:
 https://github.com/facebookincubator/create-react-app
 
-However, that uses a TON of node stuff. You create the "production" build with "npm run build" but what
-you get out of that is javascript that is unreadable/untouchable by humans.
+However, that uses a TON of node stuff. You create the "production"
+build with "npm run build" but what you get out of that is javascript
+that is unreadable/untouchable by humans.
 
-My theory is that a simple app should have simple code. I'm starting with the react Starter Kit which
-assumes you may be adding react to an existing app, which is much, much simpler.
+My theory is that a simple app should have simple code. I'm starting
+with the react Starter Kit which assumes you may be adding react
+to an existing app, which is much, much simpler.
 
 https://facebook.github.io/react/docs/getting-started.html
 
-I'm trying to make at least a tiny bit of progress every day, which is why this project has so
-many commits so far. Hopefully I'll get to the point soon where there's more actual stuff working,
-but for now, I'm just focused on consistency.
+I'm trying to make at least a tiny bit of progress every day, which
+is why this project has so many commits so far. Hopefully I'll get
+to the point soon where there's more actual stuff working, but for
+now, I'm just focused on consistency.
 
-It turned out that my MacOS Sierra upgrade messed up my local postgres installation, so I ended
-up re-installing Postgres.app and rebuilding the writertoys database.
+It turned out that my MacOS Sierra upgrade messed up my local
+postgres installation, so I ended up re-installing Postgres.app and
+rebuilding the writertoys database.
 
-I hit an error after re-installing postgres and trying to run the database loader:
-Library not loaded: /Applications/Postgres.app/Contents/Versions/9.4/lib/libssl.1.0.0.dylib
+I hit an error after re-installing postgres and trying to run the
+database loader: Library not loaded:
+/Applications/Postgres.app/Contents/Versions/9.4/lib/libssl.1.0.0.dylib
 
-The workaround I found on stack overflow was:
-Library not loaded: /Applications/Postgres.app/Contents/Versions/9.4/lib/libssl.1.0.0.dylib
+The workaround I found on stack overflow was: Library not loaded:
+/Applications/Postgres.app/Contents/Versions/9.4/lib/libssl.1.0.0.dylib
 
-I think since Postgres.app is 9.6 (latest) and psycopg2 is hard-coded to look for 9.4, it's a problem.
-I'm going to try installing an older version of Postgres.app.
+I think since Postgres.app is 9.6 (latest) and psycopg2 is hard-coded
+to look for 9.4, it's a problem.  I'm going to try installing an
+older version of Postgres.app.
 
-That didn't work either, since it's still looking for 9.4 and I installed 9.5. I ended up making
-a symlink from 9.4 to 9.5 under Postgres.app, which might break something in an obscure way, but
+That didn't work either, since it's still looking for 9.4 and I
+installed 9.5. I ended up making a symlink from 9.4 to 9.5 under
+Postgres.app, which might break something in an obscure way, but
 seems to have got me past the current hurdle.
 

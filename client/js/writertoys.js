@@ -3,20 +3,20 @@
 function getnames(gender, number) {
     var jqxhr = $.get('http://localhost:5000/names?gender=' + gender + '&number=' + number, gotnames)
         .done(function() {
-            alert("second success");
+            alert("done function called");
         })
         .fail(function() {
-            alert("error");
+            alert("fail function called");
         })
         .always(function() {
-            alert("finished");
+            alert("always function called");
         });
 
     // Perform other work here ...
 
     // Set another completion function for the request above
     jqxhr.always(function() {
-        alert("second finished");
+        alert("second always function called");
     });
 }
 

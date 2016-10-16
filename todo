@@ -19,7 +19,7 @@ ToDo:
 x) make the simplest names generation page that I can
 
 2) in flask, load the names in memory, and handle the /names/random URI (e.g. /names/random?gender=female&number=10 )
-  a) figure out how to start Postgres again (switched to Sierra which broke things)
+  x) figure out how to start Postgres again (switched to Sierra which broke things)
 3) do a paper prototype of what a SPA should look like
   a) change it to save names by dragging them to a save list
 4) modify page to call GET API to get a random name (or a collection of names)

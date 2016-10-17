@@ -72,3 +72,4 @@ data/surnames.zip
 data/surnames/app_c.csv
 data/surnames/app_c.xlsx
 writertoys.log
+client/node_modules

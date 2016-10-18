@@ -1,4 +1,5 @@
 #!/bin/bash
 # babel-cli didn't install "babel" under bin, and instructions recommended not
 # installing globally -- this watches the src dir and compiles jsx files in src
+# see: https://facebook.github.io/react/docs/language-tooling.html
 ./node_modules/babel-cli/bin/babel.js --presets es2015,react --watch src/ --out-dir lib/

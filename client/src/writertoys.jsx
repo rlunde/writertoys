@@ -34,3 +34,7 @@ var NamesList = React.createClass({
         getnames(gender, number);
     }
 });
+ReactDOM.render(
+  <NamesList />,
+  document.getElementById('names')
+);

@@ -23,7 +23,7 @@ def list_routes():
         line = urllib.unquote("{:50s} {:20s} {}".format(rule.endpoint, methods, url))
         output.append(line)
     
-    return '\n<br/>'.join(output)
+    return '|'.join(output)
 
 @app.route('/')
 def api_root():
@@ -51,7 +51,7 @@ def generate_names(gender, number):
         first_name = randnames.generate_name(gender, 'first')
         last_name = randnames.generate_name(gender, 'last')
         full_name = first_name + " " + last_name
-        rval = rval + full_name + "<br/>"
+        rval = rval + full_name + "|"
     return rval
 
 if __name__ == '__main__':

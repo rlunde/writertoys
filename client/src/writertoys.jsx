@@ -1,12 +1,15 @@
 var NamesList = React.createClass({
     getInitialState: function() {
-        return {number: '', gender: ''};
+        return {number: '', gender: '', names: ''};
     },
     handleGenderChange: function(e) {
         this.setState({gender: e.target.value});
     },
     handleNumberChange: function(e) {
         this.setState({number: e.target.value});
+    },
+    handleNamesChange: function(data) {
+        this.setState({names: data});
     },
     render: function() {
         return (
@@ -24,14 +27,17 @@ var NamesList = React.createClass({
                 </div>
                 <button onClick={this.handleClick} className="namesButton">
                     Get Names !</button >
+                <div className="randomNames">
+                    {this.state.names}
+                </div>
             </div>
         );
     },
     handleClick: function() {
         var gender = this.state.gender.trim();
         var number = this.state.number.trim();
-        alert("calling getnames with gender " + gender + " and number " + number);
-        getnames(gender, number);
+        //alert("calling getnames with gender " + gender + " and number " + number);
+        getnames(gender, number, this.handleNamesChange);
     }
 });
 ReactDOM.render(

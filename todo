@@ -3,25 +3,20 @@ and the cli implementation under cli, for name generation.
 
 I used yeoman ("yo flask-api") to generate this top level python
 for flask in a virtualenv.  See "notes" for the gory details.
+I'm nervous about using yeoman for anything now, though, so
+we'll see whether I stick with this structure or not.
 
-So next, in order to have a minimal Flask server that has
-an API to generate names, and a web page that uses the API,
-I just need to:
+I'm getting started by following 
 
-Done:
+the React tutorial: https://facebook.github.io/react/docs/tutorial.html
 
-* make a directory for html/css/js and an instance of nginx that serves that content.
-* use a reverse proxy in the nginx config to map the flask service to an API url.
-*) make a button, a numeric text field for number of names, and a gender selector
+ToDo Next:
 
-ToDo:
-
-x) make the simplest names generation page that I can
-
-2) in flask, load the names in memory, and handle the /names/random URI (e.g. /names/random?gender=female&number=10 )
-  x) figure out how to start Postgres again (switched to Sierra which broke things)
-3) do a paper prototype of what a SPA should look like
-  a) change it to save names by dragging them to a save list
-4) modify page to call GET API to get a random name (or a collection of names)
-5) see if I can generate part of the code for the names page using goodwin
+...
+3) make the database connection configuration driven (not just "localhost")
+4) make the Flask API URI configuration driven (not just "localhost:5000")
+5) make an incrementally better layout of name generator 
+6) make an incrementally better layout of main SPA page
+7) improve this todo list by breaking down into stories/features
+N) see if I can generate part of the code for the names page using goodwin
 

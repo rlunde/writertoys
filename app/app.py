@@ -4,7 +4,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 import sys,os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'cli'))
-import randnames
+from cli import randnames
 
 app = Flask(__name__)
 

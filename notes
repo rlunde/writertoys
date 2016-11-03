@@ -347,3 +347,11 @@ installed 9.5. I ended up making a symlink from 9.4 to 9.5 under
 Postgres.app, which might break something in an obscure way, but
 seems to have got me past the current hurdle.
 
+I need to go back through these notes and delete all the dead ends and
+paths I discarded.
+
+One thing I just noticed is that the Flask app was somehow locating the 
+randnames.py module, but that's in cli/ and it wasn't specifying cli.
+I changed the import and added an empty __init__.py file in the cli
+directory, just in case.
+

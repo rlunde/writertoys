@@ -20,3 +20,10 @@ ToDo Next:
 7) improve this todo list by breaking down into stories/features
 N) see if I can generate part of the code for the names page using goodwin
 
+ToDo Cleaning Up The Projects:
+
+1) list all files, and visit each one
+  a) delete dead ends, except a note in documentation
+  b) clean up, move, and rename things to make a clean structure
+  c) explain the project structure, the goals, and status
+

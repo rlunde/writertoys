@@ -355,3 +355,10 @@ randnames.py module, but that's in cli/ and it wasn't specifying cli.
 I changed the import and added an empty __init__.py file in the cli
 directory, just in case.
 
+Next, now that I have name generation partially working at least, is
+to flesh out more about characters -- backgrounds and outlines. Characters
+have an age, appearance/physical characteristics, psychology, philosophy of life,
+attitude, beliefs, things related to health, etc. All those things would
+fill out an outline. The background shows what other things they've done
+before we meet them in a story -- jobs, education, travel, parents, friends,
+etc.

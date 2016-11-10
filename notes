@@ -362,3 +362,11 @@ attitude, beliefs, things related to health, etc. All those things would
 fill out an outline. The background shows what other things they've done
 before we meet them in a story -- jobs, education, travel, parents, friends,
 etc.
+
+Stories both have characters, and characters span stories (sometimes) so
+I'll probably want to have them be able to link to objects of different
+sorts without a lot of constraints, and have a flexible way of representing
+that in a UI -- not a hierarchy, but possibly columns with items connected
+from a row in one column to one or more rows in other columns. Not a table,
+but more like swim lanes.
+

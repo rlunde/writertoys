@@ -3,6 +3,7 @@ deal with it, but for now we'll just use a text outline. I like to invert things
 and put the next action on the top, rather than the bottom. The numbers reflect
 the depth -- 0 is the top, 1 is the next, etc.
 
+5: list facets of character background (family, place, health, education, hobbies, ...)
 4: create character background
 4: create character outlines
 3: create character names, outlines and backgrounds

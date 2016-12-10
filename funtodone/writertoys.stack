@@ -1,4 +1,4 @@
-The "real" format will be JSON, and there will be tools (and a web site) to
+The "real" format of a funtodone stack will be JSON, and there will be tools (and a web site) to
 deal with it, but for now we'll just use a text outline. I like to invert things
 and put the next action on the top, rather than the bottom. The numbers reflect
 the depth -- 0 is the top, 1 is the next, etc.

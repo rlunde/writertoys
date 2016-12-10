@@ -158,3 +158,9 @@ thinking about starting off each piece as a library, then a command line runner 
 that, and finally a web interface. It seems like a chatbot interface would be easy
 to layer on to the same underlying libraries.
 
+For character background, I think it would be fun to generate options for:
+ * family
+ * places (lived, traveled to, currently in, etc.)
+ * health (injuries, allergies, weight, height, mental health - depression, anxiety, etc.)
+ * education (degrees, interests)
+ * hobbies

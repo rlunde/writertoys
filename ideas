@@ -161,6 +161,18 @@ to layer on to the same underlying libraries.
 For character background, I think it would be fun to generate options for:
  * family
  * places (lived, traveled to, currently in, etc.)
- * health (injuries, allergies, weight, height, mental health - depression, anxiety, etc.)
+ * physical attributes / health (injuries, allergies, weight, height, mental health - depression, anxiety, etc.)
  * education (degrees, interests)
  * hobbies
+
+Other characters attributes:
+ * age
+ * psychology / personality
+ * philosophy of life
+ * attitude - optimist, pessimist, pragmatist, ...
+ * beliefs
+ * friends
+ * pets
+ * style - how they dress, cut their hair, etc.  Are they neat or sloppy?
+
+

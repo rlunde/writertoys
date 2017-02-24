@@ -27,3 +27,8 @@ For blogs, I'm hoping to make some writertoys help:
 I'm creating this with python2.7 and Flask. I use virtualenv with this, but I don't plan to
 check in the venv directory with the installed libraries (Flask and it's dependencies).
 
+I think the following might be a good source for instructions on how to make writertoys
+installable as a python package:
+
+https://www.digitalocean.com/community/tutorials/how-to-package-and-distribute-python-applications
+

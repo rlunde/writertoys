@@ -27,3 +27,8 @@ ToDo Cleaning Up The Projects:
   b) clean up, move, and rename things to make a clean structure
   c) explain the project structure, the goals, and status
 
+Things NOT To Do:
+
+1) avoid adding a login / authentication - this can be a giant time sink
+  a) focus on getting something fun and useful using a local database
+  b) once everything else is working, THEN see about adding logins, etc.

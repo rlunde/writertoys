@@ -1,0 +1,8 @@
+[ ] I've forgotten everything
+  [ ] list all files here (that I wrote)
+    [ ] say what they do, why I wrote them
+    [ ] say what the next step is
+  [ ] go through the todo list, find the next 3 things to do
+    [ ] for each thing, write down next steps to do it
+  [ ] figure out how to avoid getting myself in the same spot in the future
+    [ ] focus on making it easy to restart work on a project

@@ -382,3 +382,9 @@ on a nifty workaround for those as part of my First Rational novel, so I
 think I'm better off -- both for myself, and for people like me -- continuing
 on that for a while, before I get back to this.
 
+It's been a few months since I worked on this, so now I'm trying to get
+back into it. Since I've been off working on funtodone, new kids on the
+block have shown up: vue and vuex seem to be grabbing attention away from
+react and redux, yarn is making waves in npm circles, etc. For now, I'm
+planning to stick to the older libraries, but I'll try to keep an eye
+on the new kids to see what is happening.

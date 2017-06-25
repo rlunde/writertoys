@@ -29,6 +29,9 @@ ToDo Cleaning Up The Projects:
 
 Things NOT To Do:
 
-1) avoid adding a login / authentication - this can be a giant time sink
+1) avoid adding my own login / authentication - this can be a giant time sink
   a) focus on getting something fun and useful using a local database
   b) once everything else is working, THEN see about adding logins, etc.
+  c) actually I had a brainstorm -- why not use a stand-alone microservice for auth and proxy through to it?
+    i) I plan to look at this: https://github.com/davidguttman/authentic ?
+    ii) I may look at re-doing something like that in python or go

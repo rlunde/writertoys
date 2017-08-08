@@ -35,3 +35,9 @@ Things NOT To Do:
   c) actually I had a brainstorm -- why not use a stand-alone microservice for auth and proxy through to it?
     i) I plan to look at this: https://github.com/davidguttman/authentic ?
     ii) I may look at re-doing something like that in python or go
+
+I've started taking a Pluralsight course on Flask, that includes login with authentication,
+so perhaps I'll learn a simple way to do that. I'm actually leaning a lot more towards putting
+both authentication and session management into external microservices, just to explore 
+what that means and how to do it. I've got most of what I would need to do that in golang
+already.

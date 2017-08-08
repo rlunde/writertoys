@@ -388,3 +388,18 @@ block have shown up: vue and vuex seem to be grabbing attention away from
 react and redux, yarn is making waves in npm circles, etc. For now, I'm
 planning to stick to the older libraries, but I'll try to keep an eye
 on the new kids to see what is happening.
+
+========
+
+I'm going to restart this in python3. The first thing I did (since I'm on
+a mac) is:
+
+brew install python3
+
+$ python3 --version
+Python 3.6.2
+
+Next, I created a new virtualenv in python3, alongside the 2.7 venv:
+
+python3 -m venv /Users/ron/Dropbox/personal/projects/writertoys/writertoys/venv3
+

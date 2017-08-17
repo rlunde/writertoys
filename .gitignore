@@ -54,8 +54,9 @@ docs/_build/
 # PyBuilder
 target/
 
-# Virtual environment
+# Virtual environments
 venv
+venv3
 
 # client stuff
 client/examples
@@ -73,3 +74,4 @@ data/surnames/app_c.csv
 data/surnames/app_c.xlsx
 writertoys.log
 client/node_modules
+cli/unused

@@ -75,3 +75,5 @@ data/surnames/app_c.xlsx
 writertoys.log
 client/node_modules
 cli/unused
+
+old/**

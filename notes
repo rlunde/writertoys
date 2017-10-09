@@ -2,6 +2,25 @@ Restarting using python3
 
 Trying by starting with the actual Flask manual
 in the doc directory. (I know -- shocking, right?)
+I got it from: http://flask.pocoo.org/docs/0.12/.latex/Flask.pdf
 
 See doc/Flask.pdf
+
+WriterToys Web Architecture:
+-----------------------------
+My goal is to make this app "modern" in the sense that I
+don't do anything with HTML or CSS or Javascript (other than
+serve them up) in python. Unfortunately, Flask (like Rails or
+most other web frameworks) is designed with the idea that
+you're going to be doing a lot of template-based rendering.
+
+I don't want to do that. For Flask, I just want to do REST.
+I don't even want to serve up static content: I would rather
+do that with nginx, and just proxy the REST APIs through to
+Flask from nginx. (The proxy stuff is mostly so I don't have
+to wrangle CORS and stuff like that for such a simple app.
+Is that lazy?) I still need to figure out how XSS prevention
+works in that architecture -- but I'd rather have to actually
+figure it out myself than just assume it's all taken care of.
+-----------------------------
 

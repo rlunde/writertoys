@@ -24,3 +24,22 @@ works in that architecture -- but I'd rather have to actually
 figure it out myself than just assume it's all taken care of.
 -----------------------------
 
+There is an extension to Flask, Flask-RESTful, that might
+be helpful in putting together REST APIs:
+
+https://media.readthedocs.org/pdf/flask-restful/latest/flask-restful.pdf
+
+Akshay Pai has written an article on doing REST APIs with Flask:
+https://sourcedexter.com/python-rest-api-flask/
+
+One of the things that got me entirely hung up on this project
+and other projects is the following:
+  a) I want to make a demo website where anyone can log in and use it
+  b) that means I need to do simple authentication and session management
+  c) that's a complete distraction from what I want to do, and it's hard
+  d) so I stall out
+
+I'm trying to get around this now by moving auth and session management
+into a separate process and mapping some URLs to it. That way I can do
+auth (with account management) once and use it across all my silly side
+projects. That is called "sideauth".

@@ -24,7 +24,7 @@ For blogs, I'm hoping to make some writertoys help:
 * create blog ideas
 * find a theme for several related blog posts
 
-I'm creating this with python2.7 and Flask. I use virtualenv with this, but I don't plan to
+I'm creating this with python3.6.2 and Flask. I use virtualenv with this, but I don't plan to
 check in the venv directory with the installed libraries (Flask and it's dependencies).
 
 I think the following might be a good source for instructions on how to make writertoys

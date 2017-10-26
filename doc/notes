@@ -48,5 +48,14 @@ I started the client over with a react boilerplate that looks like
 it's very popular. It's HUGE of course, so I moved it to my regular file
 system rather than under Dropbox, and put in a symlink.
 
-  client -> /Users/ron/Projects/writertoys_client/
+  client -> ~/Projects/writertoys_client/
+
+OK, that's not going to work for me, not at this stage. What I tried
+out was: https://github.com/react-boilerplate/react-boilerplate which
+"seems" like a nice starting point for a real-world app, but in reality
+I think I'm much better off starting with the official create-react-app
+from Facebook and adding Redux and React Router in myself. All the rest
+of the magic is just too...magical. I don't want to spend a year learning
+all the nifty toys they built into the boilerplate.
+
 

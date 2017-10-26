@@ -1,0 +1,56 @@
+The client was initially made via https://github.com/facebookincubator/create-react-app
+
+I'm trying it with yarn.
+
+I'm following the Udemy course by Stephen Grider, section 6, and trying to add
+my own content at the same time. Yikes!
+
+https://www.udemy.com/react-redux/learn/v4/content
+https://github.com/StephenGrider/ReduxSimpleStarter
+
+yarn upgrade --upgrade-interactive
+yarn start
+yarn add react-router
+
+"yarn build" said this:
+=======================================
+Rons-MBP:client ron$ yarn build
+yarn build v0.27.5
+$ react-scripts build
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  48.29 KB  build/static/js/main.24a4ad74.js
+  288 B     build/static/css/main.cacbacc7.css
+
+The project was built assuming it is hosted at the server root.
+To override this, specify the homepage in your package.json.
+For example, add this to build it for GitHub Pages:
+
+  "homepage" : "http://myname.github.io/myapp",
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  yarn global add serve
+  serve -s build
+
+Done in 14.41s.
+=======================================
+
+"yarn start" launched a chrome tab to localhost:3000 which included this:
+To get started, edit src/components/App.js and save to reload.
+
+I'm following along with Stephen Grider's Udemy react-redux video tutorial,
+starting in section 6.
+
+react-router includes node_modules/history
+
+history sends updated url to react-router, which sends new components to react,
+which renders.
+
+In order to catch up to Stephen Grider, I need to try to add the stuff from 
+his react-simple-starter project (redux, in particular) to the framework installed
+by 

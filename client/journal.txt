@@ -53,4 +53,25 @@ which renders.
 
 In order to catch up to Stephen Grider, I need to try to add the stuff from 
 his react-simple-starter project (redux, in particular) to the framework installed
-by 
+by create-react-app (https://github.com/facebookincubator/create-react-app)
+
+I think in order to tie in auth and sessions with sideauth, I'll use axios with
+an interceptor to validate the session: https://github.com/axios/axios#interceptors
+There's an example here:
+https://stackoverflow.com/questions/43326383/using-session-cookies-in-react
+
+Maybe that's too complicated for a first attempt? Probably better to start out
+with just looking at the cookie in every render. Looks like a universal-cookie module 
+may be what I could use? 
+https://www.npmjs.com/package/universal-cookie
+import Cookies from 'universal-cookie';
+ 
+const cookies = new Cookies();
+ 
+cookies.set('myCat', 'Pacman', { path: '/' });
+console.log(cookies.get('myCat')); // Pacman
+
+There's also a react-cookie module that looks interesting.
+
+
+

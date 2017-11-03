@@ -73,5 +73,10 @@ console.log(cookies.get('myCat')); // Pacman
 
 There's also a react-cookie module that looks interesting.
 
+Oh boy. react-router v4 is a complete rewrite, and the stuff
+Stephen Grider is using is gone -- browserHistory, for example.
+I'm trying to figure out the replacement starting with
+https://github.com/ReactTraining/react-router/issues/5263
+
 
 

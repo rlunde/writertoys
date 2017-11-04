@@ -5,6 +5,9 @@ quite a while. I'm using it as a learning exercise more than anything else at th
 goal of eventually knowing python, flask, sqlalchemy, and so on. I will remove this disclaimer when
 I think the project has reached MVP (minimum viable project) stage. That won't be for a while.
 
+NOTE: I'm not abandoning this project, but I've decided to spend some time really focusing on
+another project (goodwin), which I will then use to try to help make this project.
+
 A handful of simple web toys for writers, to help create plots, characters, settings, and conflict.
 
 Here are some of the things writertoys will help with:

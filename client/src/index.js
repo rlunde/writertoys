@@ -6,7 +6,9 @@ import './style/index.css';
 
 import App from './components/App';
 // BrowserRouter creates a browser history
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+//import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import reducers from './reducers';
 
 // note: this is from Stephen Grider's Redux Simple Starter. I deleted

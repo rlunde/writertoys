@@ -78,5 +78,31 @@ Stephen Grider is using is gone -- browserHistory, for example.
 I'm trying to figure out the replacement starting with
 https://github.com/ReactTraining/react-router/issues/5263
 
+===============================================
+Saturday, November 25, 2017
+===============================================
+
+I wanted to just get a basic client layout working with the
+react/redux sample I started with, yesterday, but something
+is really messed up with the CSS. I think I can't just use
+regular bootstrap, but need to use react-bootstrap? I'm
+going to look into that tonight.
+
+This looks promising:
+https://github.com/facebookincubator/create-react-app/issues/301
+
+npm install react-bootstrap --save
+-----
+in App.js:
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import { Nav, NavItem, MenuItem, Navbar, NavDropdown } from 'react-bootstrap'
+
+See: https://react-bootstrap.github.io/components.html
+
+OK, that's all I have time for tonight, but it's a step in
+the right direction. I need to read that react-bootstrap page 
+before I try any more layout.
+
 
 

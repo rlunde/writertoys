@@ -1,39 +1,35 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
 import '../style/writertoys.css'
+import { Nav, NavItem, MenuItem, Navbar, NavDropdown } from 'react-bootstrap'
+
+const navbarInstance = (
+  <Navbar inverse>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="#">WriterToys</a>
+      </Navbar.Brand>
+    </Navbar.Header>
+    <Nav>
+      <NavItem eventKey={1} href="#">Link</NavItem>
+      <NavItem eventKey={2} href="#">Link</NavItem>
+      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+        <MenuItem eventKey={3.1}>Action</MenuItem>
+        <MenuItem eventKey={3.2}>Another action</MenuItem>
+        <MenuItem eventKey={3.3}>Something else here</MenuItem>
+        <MenuItem divider />
+        <MenuItem eventKey={3.4}>Separated link</MenuItem>
+      </NavDropdown>
+    </Nav>
+  </Navbar>
+);
 
 class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-          <button
-            className="navbar-toggler navbar-toggler-right"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand" href="/">WriterToys</a>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">Home
-                  <span className="sr-only">(current)</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/about">About</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="/logout">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        {navbarInstance}
         <div className="main">
           Main panel goes here
         </div>

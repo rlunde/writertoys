@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
-import '../style/writertoys.css'
+
 import { Nav, NavItem, MenuItem, Navbar, NavDropdown } from 'react-bootstrap'
 
 const navbarInstance = (

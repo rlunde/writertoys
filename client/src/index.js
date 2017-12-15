@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import './style/index.css';
-
+import './style/writertoys.css'
 import App from './components/App';
 // BrowserRouter creates a browser history
 //import { BrowserRouter, Link, Route } from 'react-router-dom';

@@ -104,5 +104,15 @@ OK, that's all I have time for tonight, but it's a step in
 the right direction. I need to read that react-bootstrap page 
 before I try any more layout.
 
+===============================================
+Thursday, December 14, 2017
+===============================================
 
+I'm weighting my time towards making progress on the goodwin
+project, so I haven't had much time to work on this.
+
+I tried a WHOLE LOT of things tonight for a couple of hours
+to try to get the main div of the layout to stretch vertically
+between the nav and the footer, using flexbox, and nothing
+worked. Giving up for now.
 

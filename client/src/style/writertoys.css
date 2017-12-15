@@ -3,13 +3,22 @@ html {
   position: relative;
   min-height: 100%;
 }
-/* 
-body {
-  margin-top: 60px;
-  margin-bottom: 60px;
-} */
+
+.root {
+  /* margin-top: 60px;
+  margin-bottom: 60px; */
+  display: flex;
+  justify-content: center;
+
+} 
 .main {
   margin: 0 auto;
+  background-color: #e2e2f5;
+  /* I've tried about a million settings with flexbox, and can't
+     figure out how to get this div to stretch vertically to fill
+     the space between nave and footer.
+     */
+  /* height: 500px; */
 }
 /* sticky footer */
 .footer {

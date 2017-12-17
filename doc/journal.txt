@@ -116,3 +116,14 @@ to try to get the main div of the layout to stretch vertically
 between the nav and the footer, using flexbox, and nothing
 worked. Giving up for now.
 
+===============================================
+Sunday, December 17, 2017
+===============================================
+
+I'm going to try just using regular CSS for the main div,
+based on the fiddle here:
+https://jsfiddle.net/c92z2/
+
+That seems to work fine, for now. I'd really like to figure
+out how to do that using just flexbox, but I'd like even more
+to get some minimum functionality working.

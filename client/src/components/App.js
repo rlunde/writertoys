@@ -31,7 +31,7 @@ class App extends Component {
       <div>
         {navbarInstance}
         <div className="main">
-          Main panel goes here
+          <div className="main-content">Main panel goes here</div>
         </div>
         <footer className="footer">
           <div className="container">

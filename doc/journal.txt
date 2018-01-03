@@ -127,3 +127,15 @@ https://jsfiddle.net/c92z2/
 That seems to work fine, for now. I'd really like to figure
 out how to do that using just flexbox, but I'd like even more
 to get some minimum functionality working.
+
+===============================================
+Tuesday, January 2, 2012
+===============================================
+
+Happy New Year. It's already past my bedtime, and I'm trying
+to find one teeny weeny incremental thing I can do here today.
+
+How about if I fix the eslint warnings!
+
+Done! And that's all I can do tonight. Something > Nothing?
+I guess.

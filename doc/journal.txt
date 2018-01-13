@@ -139,3 +139,19 @@ How about if I fix the eslint warnings!
 
 Done! And that's all I can do tonight. Something > Nothing?
 I guess.
+
+===============================================
+Sunday, January 7, 2012
+===============================================
+
+Restructuring things, so have to reinstall virtualenv for python3
+
+It turns out that installing High Sierra had (apparently) messed up python3,
+so I had to re-install that with homebrew:
+
+$  brew uninstall python3
+$  brew install python3
+$  pip3 install --upgrade pip setuptools wheel
+$  python3 -m venv ./venv3
+$  . source_me3 
+

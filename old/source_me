@@ -1,5 +1,0 @@
-#export DATABASE_URL="postgresql://localhost/writertoysdb"
-export APP_DEVELOPMENT_DATABASE_URI="postgresql://localhost/writertoys"
-export APP_CONFIG=development
-export SQLALCHEMY_TRACK_MODIFICATIONS=True
-source venv/bin/activate

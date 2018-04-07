@@ -1,42 +1,22 @@
 Pages
-  Landing/Index
-    Links: LogIn, SignUp
-    Info: About WriterToys
-    Only shown if no session cookie or invalid session
-  Login
-    Links: Home, SignUp, ForgotAccount, ForgotPassword
-    Input: Account, Password
-    API: Login
-    Info: about logins, error (if login failed)
-    Redirect: redirect to SPA if valid session cookie
-  SignUp
-    Links: Home, Login, ForgotAccount, ForgotPassword
-    Input: Account, Password, Email
-    API: SignUp
-    Info: about logins, about email, error (if signup failed)
-    Redirect: redirect to SPA if valid session cookie
-  ForgotAccount
-    Links: Home, Login, SignUp
-    Input: Email
-    API: ForgotAccount
-    Info: about logins, about email
-    Redirect: redirect to SPA if valid session cookie
-  ForgotPassword
-    Links: Home, Login, SignUp
-    Input: Email
-    API: ForgotPassword
-    Info: about logins, about email
-    Redirect: redirect to SPA if valid session cookie
-  SPA
-    Links: LogOut
-    Info: <<everything>>
+  Index
+    Links: about
     Input: <<context dependent>>
-    API: <<context dependent>>, LogOut
-    Redirect: redirect to Landing if no valid session cookie
+      generate:
+        character names
+        character bios
+        log lines
+        plot synopsis
+        settings
+        conflicts
+    Each generated thing should have a "save" or "discard" checkbox
+    Copy each saved thing to session JSON
+    Download session results as file
+  About 
+    Description
+    Links to github project, official demo site
 
 The Pages are all implemented under client, in React/Redux.
 
 The APIs for the SPA page are implemented under app, in Python/Flask.
-
-The APIs for everything else are passed through to sideauth via nginx proxy.
 

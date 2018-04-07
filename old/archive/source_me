@@ -1,3 +1,0 @@
-export DATABASE_URL="postgresql://localhost/writertoysdb"
-export APP_SETTINGS="config.DevelopmentConfig"
-source venv/bin/activate

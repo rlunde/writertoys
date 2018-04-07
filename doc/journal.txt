@@ -174,3 +174,25 @@ Next testing steps!
 
 Ok go!
 
+===============================================
+Saturday, April 7, 2018
+===============================================
+
+It's a new day, and a new direction for all of these projects.
+
+I don't want to make a website with logins, authorization, and 
+persistent state across sessions.
+
+Here's what I want to make:
+
+* something that runs in a container and can be deployed as is
+* focus on something that can help me learn, and maybe help others as an example
+* focus on producing fun and funny results
+  - random character names
+  - random plots
+  - random log lines / elevator pitches
+  - random settings
+  - random character bios 
+* use flask as server side 
+* use modern javascript (react, redux) as client side
+

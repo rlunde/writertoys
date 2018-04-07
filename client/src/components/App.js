@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 
 import { Nav, NavItem, MenuItem, Navbar, NavDropdown } from 'react-bootstrap'
+import WriterToysMenu from './Menu';
 
 const navbarInstance = (
   <Navbar inverse>
@@ -28,9 +29,11 @@ const navbarInstance = (
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="app">
         {navbarInstance}
+        
         <div className="main">
+        <WriterToysMenu />
           <div className="main-content">Main panel goes here</div>
         </div>
         <footer className="footer">

@@ -196,3 +196,10 @@ Here's what I want to make:
 * use flask as server side 
 * use modern javascript (react, redux) as client side
 
+===============================================
+Monday, April 30, 2018
+===============================================
+Yesterday I fixed the hoek security vulnerability, but
+I didn't write down how I did it. Now I have to do it
+again for other projects. Dang it.
+

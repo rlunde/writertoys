@@ -1,1 +1,0 @@
-create user writertoys with LOGIN CREATEDB PASSWORD 'silly1';
